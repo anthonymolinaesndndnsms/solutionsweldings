@@ -1,139 +1,196 @@
-"use client";
-
+import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Shield, Award, Clock, Users, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 
-const values = [
-  { icon: Shield, title: "Integrity First",  text: "We do what we say and stand behind every job. No shortcuts, no excuses — honest work at a fair price." },
-  { icon: Award,  title: "Craftsmanship",    text: "Every project reflects our commitment to quality. From the first pass to the final inspection, we hold the standard." },
-  { icon: Clock,  title: "Reliability",      text: "Deadlines matter. We plan our work carefully, communicate proactively, and deliver on time, every time." },
-  { icon: Users,  title: "Partnership",      text: "We work alongside our clients, not just for them. Understanding your operation is how we deliver the best solution." },
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Solutions Contracting Group is a licensed general contractor providing renovation, facility improvement, and project management services for industrial facilities in North and South Carolina.",
+};
+
+const considerations = [
+  "Production schedules",
+  "Facility operations",
+  "Employees",
+  "Equipment",
+  "Access",
+  "Safety requirements",
+  "Subcontractors",
+  "Deadlines",
 ];
 
-const certifications = [
-  "SC GC License — CLG.127227.GC",
-  "NC GC License — L.108274",
-  "AWS D1.1 Structural Steel Certified",
-  "AWS D1.6 Stainless Steel Certified",
-  "3-A Sanitary Standards Compliant",
-  "OSHA Safety Compliant",
-  "Fully Licensed & Insured",
-  "cGMP Documentation Capable",
+const approach = [
+  {
+    key: "Plan",
+    body: "Every successful project starts with a clear understanding of the objective. We evaluate the project requirements, help establish the scope, identify the resources needed, and develop a practical path forward.",
+  },
+  {
+    key: "Build",
+    body: "Once the plan is established, we coordinate the people, materials, subcontractors, schedules, and site activities necessary to execute the work.",
+  },
+  {
+    key: "Deliver",
+    body: "We manage the project through completion while maintaining communication, quality, organization, and accountability.",
+  },
 ];
 
 export default function AboutPage() {
   return (
     <div>
-      {/* ── Hero — full-bleed photo background ── */}
-      <section className="relative h-[520px] sm:h-[600px] overflow-hidden">
-        <style>{`
-          @keyframes hero-img-in {
-            from { opacity: 0; transform: scale(1.07); }
-            to   { opacity: 1; transform: scale(1); }
-          }
-          @keyframes hero-text-in {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-          }
-        `}</style>
-
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/portfolio/5-star/PXL_20251028_145614273.jpg"
-          alt="About hero"
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          loading="eager"
-          style={{ animation: "hero-img-in 1.4s cubic-bezier(0.25,0.46,0.45,0.94) forwards" }}
+      {/* ── Hero ── */}
+      <section className="relative bg-steel-900 steel-grain pt-[84px] overflow-hidden border-b border-steel-700">
+        <div
+          className="absolute inset-0 opacity-[0.12] bg-cover bg-center"
+          style={{ backgroundImage: "url('/portfolio/5-star/PXL_20250923_132219409.jpg')" }}
+          aria-hidden
         />
         <div
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(28,33,40,0.82) 0%, rgba(28,33,40,0.28) 45%, rgba(20,26,32,0.92) 100%)",
+              "linear-gradient(115deg, rgba(16,21,26,0.97) 0%, rgba(16,21,26,0.88) 60%, rgba(11,14,18,0.95) 100%)",
           }}
+          aria-hidden
         />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, transparent 55%, rgba(21,125,160,0.07) 100%)",
-          }}
-        />
-        <div className="relative z-10 h-full flex flex-col justify-end max-w-7xl mx-auto px-6 lg:px-8 pb-16 pt-[80px]">
-          <p
-            className="text-[11px] font-semibold tracking-[0.22em] text-[#38B6D9] uppercase mb-3 drop-shadow"
-            style={{ animation: "hero-text-in 0.7s ease 0.3s both" }}
-          >
-            About the Company
-          </p>
-          <h1
-            className="text-5xl sm:text-6xl font-black text-white mb-5 leading-tight drop-shadow-lg"
-            style={{ animation: "hero-text-in 0.7s ease 0.45s both" }}
-          >
-            Built on Skill.<br />Run on Integrity.
-          </h1>
-          <p
-            className="text-[16px] text-white/70 leading-relaxed max-w-2xl drop-shadow"
-            style={{ animation: "hero-text-in 0.7s ease 0.6s both" }}
-          >
-            Solutions Welding & Fabrication, LLC has been delivering precision metalwork, renovations, and electrical services for over 20 years. Based in Fort Mill, SC — we bring certified expertise to projects nationwide.
-          </p>
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold tracking-[0.28em] text-azure-400 uppercase mb-5 rise-in">
+              About
+            </p>
+            <h1
+              className="text-4xl sm:text-5xl lg:text-[58px] font-black text-chrome-100 mb-7 leading-[1.08] tracking-tight rise-in"
+              style={{ animationDelay: "0.14s" }}
+            >
+              Built Around the Project.
+            </h1>
+            <p
+              className="text-[16px] text-chrome-400 leading-relaxed max-w-2xl rise-in"
+              style={{ animationDelay: "0.26s" }}
+            >
+              Solutions Contracting Group is a licensed general contractor providing general
+              contracting, renovation, facility improvement, and project management services for
+              industrial facilities.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ── Values — LIGHT ── */}
-      <section className="bg-[#F2F1EE] py-20">
+      {/* ── Not in a vacuum ── */}
+      <section className="bg-mist-50 py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <AnimateIn className="lg:col-span-7 space-y-5">
+              <p className="text-[16px] text-ink-700 leading-relaxed">
+                We understand that industrial projects aren&apos;t completed in a vacuum.
+              </p>
+              <p className="text-[15px] text-ink-500 leading-relaxed">
+                That&apos;s why our approach begins with understanding the facility and the
+                objective — not simply the individual task.
+              </p>
+              <p className="text-[15px] text-ink-500 leading-relaxed">
+                We work with customers to define the scope, establish a practical plan, coordinate
+                the appropriate resources, and manage the project through completion.
+              </p>
+            </AnimateIn>
+
+            <AnimateIn delay={90} className="lg:col-span-5">
+              <h2 className="text-[10px] font-bold tracking-[0.2em] text-ink-400 uppercase mb-5">
+                All of it has to be considered
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {considerations.map((item) => (
+                  <span
+                    key={item}
+                    className="px-3.5 py-2 text-[13px] font-medium text-ink-700 bg-white border border-mist-300 rounded"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── A better way ── */}
+      <section className="bg-steel-900 steel-grain py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <AnimateIn className="lg:col-span-5">
+              <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 leading-[1.2] tracking-tight">
+                A better way to manage facility projects.
+              </h2>
+            </AnimateIn>
+            <AnimateIn delay={90} className="lg:col-span-7 space-y-5">
+              <p className="text-[15px] text-chrome-400 leading-relaxed">
+                Managing multiple contractors, schedules, proposals, materials, and scopes can
+                consume valuable time for facility and operations teams.
+              </p>
+              <p className="text-[15px] text-chrome-400 leading-relaxed">
+                Solutions Contracting Group provides a single point of contact to help simplify that
+                process. We coordinate the project, communicate with subcontractors, track progress,
+                manage schedules, and keep the customer informed throughout the work.
+              </p>
+              <p className="text-[15px] text-chrome-200 leading-relaxed border-l-2 border-azure-500 pl-5">
+                Our goal is straightforward: make it easier for our customers to get facility
+                projects completed.
+              </p>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Our Approach ── */}
+      <section className="bg-mist-100 py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimateIn className="mb-12">
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3">How We Operate</p>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#15191E]">Core Values</h2>
+            <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight">
+              Our Approach
+            </h2>
           </AnimateIn>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {values.map(({ icon: Icon, title, text }, i) => (
-              <AnimateIn key={title} delay={i * 70} className="bg-white border border-[#D6D4CF] rounded-lg p-6">
-                <Icon className="w-5 h-5 text-[#157DA0] mb-4" />
-                <h3 className="text-[14px] font-bold text-[#15191E] mb-2">{title}</h3>
-                <p className="text-[12px] text-[#6A7280] leading-relaxed">{text}</p>
+
+          <div className="space-y-px bg-mist-200 border border-mist-200 rounded-lg overflow-hidden">
+            {approach.map((phase, i) => (
+              <AnimateIn key={phase.key} delay={i * 80}>
+                <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-12 gap-5 md:gap-10">
+                  <h3 className="md:col-span-3 text-[13px] font-black text-ink-900 uppercase tracking-[0.22em]">
+                    <span className="text-azure-500 mr-3">{String(i + 1).padStart(2, "0")}</span>
+                    {phase.key}
+                  </h3>
+                  <p className="md:col-span-9 text-[14.5px] text-ink-500 leading-relaxed">
+                    {phase.body}
+                  </p>
+                </div>
               </AnimateIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Certifications — LIGHT ── */}
-      <section className="bg-[#E8E6E1] py-20">
+      {/* ── Tagline ── */}
+      <section className="bg-steel-950 steel-grain py-24 border-t border-steel-700">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-            <AnimateIn>
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3">Credentials</p>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#15191E] mb-5">Licenses &amp; Certifications</h2>
-              <p className="text-[14px] text-[#6A7280] leading-relaxed">
-                Licensed general contractor with over 20 years of experience. Our team holds current certifications across structural, sanitary, and specialty welding disciplines, with full documentation available for regulated industries nationwide.
-              </p>
-            </AnimateIn>
-            <AnimateIn delay={100} className="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-4">
-              {certifications.map((cert) => (
-                <div key={cert} className="flex items-start gap-2.5 py-2 border-b border-[#D6D4CF] last:border-0">
-                  <CheckCircle2 className="w-4 h-4 text-[#157DA0] shrink-0 mt-0.5" />
-                  <span className="text-[13px] text-[#3D4550]">{cert}</span>
-                </div>
-              ))}
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── CTA — DARK ── */}
-      <section className="bg-[#141A20] py-20 border-t border-[#2A3340]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimateIn className="max-w-xl">
-            <h2 className="text-2xl sm:text-3xl font-black text-[#E4E7EA] mb-4">Ready to Work Together?</h2>
-            <p className="text-[15px] text-[#8A9098] leading-relaxed mb-8">
-              Reach out today and let's discuss your project requirements. We'll provide a clear scope and quote with no obligation.
+          <AnimateIn className="flex flex-col items-center text-center">
+            <Image
+              src="/brand/scg-logo.png"
+              alt="SCG Solutions Contracting Group"
+              width={1256}
+              height={859}
+              className="h-[130px] w-auto mb-10 opacity-95"
+            />
+            <p className="text-[13px] font-black text-chrome-200 uppercase tracking-[0.32em] mb-5">
+              Plan · Build · Deliver
             </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#157DA0] hover:bg-[#106480] text-white font-semibold text-[14px] rounded transition-colors duration-150">
-              Contact Us <ArrowRight className="w-4 h-4" />
+            <p className="text-[15px] text-chrome-400 max-w-md leading-relaxed mb-10">
+              It&apos;s more than a tagline. It&apos;s how we approach every project.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-azure-500 hover:bg-azure-600 text-white font-semibold text-[14px] rounded transition-colors duration-150"
+            >
+              Start a Conversation <ArrowRight className="w-4 h-4" />
             </Link>
           </AnimateIn>
         </div>

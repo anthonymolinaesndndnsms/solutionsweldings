@@ -1,6 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
-
 @import "tailwindcss";
+
+/* ── SCG palette ──────────────────────────────────────────────
+   Sampled from the logo: brushed chrome and vivid azure on
+   near-black. Steel greys are cool (blue-shifted) so they sit
+   under the logo without clashing.
+   ──────────────────────────────────────────────────────────── */
+@theme {
+  /* dark steel */
+  --color-steel-950: #0B0E12;
+  --color-steel-900: #10151A;
+  --color-steel-850: #161C23;
+  --color-steel-800: #1D242D;
+  --color-steel-700: #2A333E;
+  --color-steel-600: #3A4553;
+
+  /* chrome / text on dark */
+  --color-chrome-100: #EDF1F4;
+  --color-chrome-200: #D3DAE1;
+  --color-chrome-300: #AEB8C2;
+  --color-chrome-400: #8C97A3;
+  --color-chrome-500: #616C79;
+
+  /* light surfaces */
+  --color-mist-50: #F5F6F8;
+  --color-mist-100: #EAEDF0;
+  --color-mist-200: #DCE0E5;
+  --color-mist-300: #C9CFD6;
+
+  /* ink on light */
+  --color-ink-900: #0E1319;
+  --color-ink-700: #333C47;
+  --color-ink-500: #5C6673;
+  --color-ink-400: #8A939E;
+
+  /* logo azure */
+  --color-azure-300: #6BBAF2;
+  --color-azure-400: #3D9EE5;
+  --color-azure-500: #1478CE;
+  --color-azure-600: #0F5EA3;
+  --color-azure-700: #0B4980;
+}
 
 * {
   box-sizing: border-box;
@@ -11,25 +50,49 @@ html {
 }
 
 body {
-  background-color: #F2F1EE;
-  color: #3D4550;
-  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--color-mist-50);
+  color: var(--color-ink-700);
+  font-family: var(--font-inter), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: rgba(21, 125, 160, 0.2);
-  color: #15191E;
+  background-color: rgba(20, 120, 206, 0.22);
+  color: var(--color-ink-900);
 }
 
 ::-webkit-scrollbar {
   width: 5px;
 }
-::-webkit-scrollbar-track { background: #E8E6E1; }
-::-webkit-scrollbar-thumb { background: #B0ADA8; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #8A8880; }
+::-webkit-scrollbar-track { background: var(--color-mist-100); }
+::-webkit-scrollbar-thumb { background: var(--color-mist-300); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-400); }
 
 [data-radix-popper-content-wrapper] {
   z-index: 9999 !important;
+}
+
+/* Brushed-steel field used behind dark sections — a faint diagonal
+   grain that echoes the logo's metal without reading as texture. */
+.steel-grain {
+  background-image:
+    repeating-linear-gradient(
+      104deg,
+      rgba(255, 255, 255, 0.016) 0px,
+      rgba(255, 255, 255, 0.016) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise-in { animation: rise-in 0.6s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise-in { animation: none; }
 }

@@ -1,125 +1,239 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 
-const services = [
+export const metadata: Metadata = {
+  title: "Industrial General Contracting Services",
+  description:
+    "General contracting, industrial renovations, facility improvements, project and site management, and multi-trade coordination for industrial facilities.",
+};
+
+const serviceBlocks = [
   {
-    tag: "01", href: "/services/sanitary", title: "Sanitary Welding",
-    headline: "FDA-compliant systems for regulated industries.",
-    description: "We specialize in hygienic welding for food processing, dairy, pharmaceutical, and beverage manufacturing. Every weld is performed to 3-A sanitary standards with full documentation.",
-    highlights: ["Orbital and TIG welding", "Stainless 304L / 316L", "Electropolishing & passivation", "cGMP process documentation", "Sanitary fittings and clamps", "Clean-room compatible practices"],
-    industries: ["Food & Beverage", "Dairy Processing", "Pharmaceutical", "Biotech"],
+    title: "Industrial Renovations",
+    paragraphs: [
+      "Existing facilities often require modifications and improvements to accommodate changing operational needs.",
+      "Solutions Contracting Group manages industrial renovation projects from initial planning through completion, coordinating the work required to update, repair, modify, or improve existing spaces.",
+      "Our focus is on delivering practical solutions while working within the demands of active industrial environments.",
+    ],
   },
   {
-    tag: "02", href: "/services/industrial", title: "Industrial Welding",
-    headline: "Heavy fabrication built for demanding environments.",
-    description: "Structural steel, pipe systems, pressure vessels, and custom fabrication for manufacturing plants, construction sites, and industrial facilities. Built to spec, built to last.",
-    highlights: ["Structural steel fabrication", "Pipe and pressure systems", "MIG, TIG, stick, flux-core", "AWS D1.1 / D1.6 certified", "On-site field welding", "Emergency repair services"],
-    industries: ["Manufacturing", "Construction", "Oil & Gas", "Mining"],
+    title: "Facility Improvements",
+    paragraphs: [
+      "We help industrial customers maintain and improve their facilities through planned upgrades, repairs, modifications, and improvement projects.",
+      "Projects may range from individual facility improvements to larger projects involving multiple scopes and subcontractors.",
+      "We work with customers to understand the need, develop the appropriate scope, coordinate the work, and manage the project through completion.",
+    ],
   },
-  {
-    tag: "03", href: "/services/ornamental", title: "Ornamental Fabrication",
-    headline: "Custom metalwork built to impress and built to last.",
-    description: "From custom entry gates and security fencing to architectural staircases and decorative panels — we bring precision craftsmanship to structural and aesthetic metalwork.",
-    highlights: ["Custom gate & fence systems", "Staircases & railings", "Architectural metal panels", "Powder coat & finish options", "Wrought iron & mild steel", "Design-to-install service"],
-    industries: ["Commercial Real Estate", "Hospitality", "Residential", "Government"],
-  },
-  {
-    tag: "04", href: "/services/renovations", title: "Renovations",
-    headline: "Full-scope renovation work, managed start to finish.",
-    description: "Residential and commercial renovation projects handled under one roof. As a licensed general contractor, we coordinate every trade, manage the schedule, and deliver a finished product you can count on.",
-    highlights: ["Residential & commercial", "Interior remodels", "Structural improvements", "Room additions", "Flooring & finish work", "Full project management"],
-    industries: ["Residential", "Commercial", "Retail", "Healthcare"],
-  },
-  {
-    tag: "05", href: "/services/electrical", title: "Electrical",
-    headline: "Licensed electrical services — residential to industrial.",
-    description: "New installs, panel upgrades, commercial buildouts, and industrial equipment hookups. All work is permitted, code-compliant, and backed by our general contracting expertise.",
-    highlights: ["New installations", "Panel upgrades", "Commercial buildouts", "Industrial equipment hookups", "Troubleshooting & repair", "Permitted & code-compliant"],
-    industries: ["Residential", "Commercial", "Industrial", "Manufacturing"],
-  },
+];
+
+const managementServices = [
+  "Project planning and scope development",
+  "Scheduling and coordination",
+  "Budget and cost management",
+  "Procurement coordination",
+  "Subcontractor coordination",
+  "Site coordination",
+  "Progress tracking",
+  "Customer communication",
+  "Quality oversight",
+  "Project closeout",
+];
+
+const capabilities = [
+  "Industrial facility renovations",
+  "Facility repairs and modifications",
+  "Flooring and interior finishes",
+  "Epoxy flooring and coatings",
+  "LVP and tile",
+  "Cabinetry installation",
+  "Carpentry",
+  "Framing",
+  "Interior improvements",
+  "Electrical coordination",
+  "Plumbing coordination",
+  "Specialty subcontractor coordination",
+  "General facility improvements",
 ];
 
 export default function ServicesPage() {
   return (
     <div>
-      {/* ── Header — DARK ── */}
-      <section className="bg-[#1C2128] pt-[62px]">
-        <style>{`@keyframes hero-text-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }`}</style>
+      {/* ── Header ── */}
+      <section className="bg-steel-900 steel-grain pt-[84px] border-b border-steel-700">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3" style={{ animation: "hero-text-in 0.6s ease 0.05s both" }}>What We Offer</p>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight" style={{ animation: "hero-text-in 0.6s ease 0.18s both" }}>Services</h1>
-            <p className="text-[16px] text-[#8A9098] leading-relaxed" style={{ animation: "hero-text-in 0.6s ease 0.3s both" }}>
-              Five specialized service lines. One unified commitment to quality. From sanitary welding to full renovations and electrical — we deliver certified results.
+          <div className="max-w-3xl">
+            <p className="text-[11px] font-semibold tracking-[0.28em] text-azure-400 uppercase mb-5 rise-in">
+              Services
             </p>
+            <h1
+              className="text-4xl sm:text-5xl font-black text-chrome-100 mb-7 leading-[1.1] tracking-tight rise-in"
+              style={{ animationDelay: "0.14s" }}
+            >
+              Industrial General Contracting Services
+            </h1>
+            <div
+              className="space-y-4 text-[15.5px] text-chrome-400 leading-relaxed rise-in"
+              style={{ animationDelay: "0.26s" }}
+            >
+              <p>
+                Solutions Contracting Group provides comprehensive general contracting, renovation,
+                facility improvement, and project management services for industrial facilities.
+              </p>
+              <p>
+                Every facility and every project presents different challenges. Our job is to
+                understand the customer&apos;s objectives, establish a clear scope of work,
+                coordinate the appropriate resources, and manage the project through completion.
+              </p>
+              <p>
+                Whether the project involves a single improvement or multiple coordinated scopes, we
+                provide the organization and oversight necessary to keep the work moving.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Service Blocks — alternating light/darker light ── */}
-      {services.map((svc, i) => (
-        <section key={svc.tag} className={`py-20 ${i % 2 === 0 ? "bg-[#F2F1EE]" : "bg-[#E8E6E1]"}`}>
+      {/* ── Renovations + Improvements ── */}
+      {serviceBlocks.map((block, i) => (
+        <section key={block.title} className={i % 2 === 0 ? "bg-mist-50 py-20" : "bg-mist-100 py-20"}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-              <AnimateIn>
-                <div className="flex items-center gap-3 mb-5">
-                  <span className="text-[11px] font-black text-[#9A9EA4] tracking-widest">{svc.tag}</span>
-                  <div className="w-8 h-px bg-[#D6D4CF]" />
-                  <span className="text-[11px] font-semibold tracking-[0.15em] text-[#157DA0] uppercase">Service</span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-black text-[#15191E] mb-3">{svc.title}</h2>
-                <p className="text-[14px] text-[#157DA0] font-medium mb-5 italic">{svc.headline}</p>
-                <p className="text-[14px] text-[#6A7280] leading-relaxed mb-8">{svc.description}</p>
-                <Link
-                  href={svc.href}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#157DA0] hover:bg-[#106480] text-white font-semibold text-[13px] rounded transition-colors duration-150"
-                >
-                  Learn More <ArrowRight className="w-4 h-4" />
-                </Link>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+              <AnimateIn className="lg:col-span-4">
+                <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight">
+                  {block.title}
+                </h2>
               </AnimateIn>
-              <AnimateIn delay={100} className="space-y-6">
-                <div>
-                  <h4 className="text-[10px] font-bold tracking-widest text-[#9A9EA4] uppercase mb-4">Capabilities</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4">
-                    {svc.highlights.map((item) => (
-                      <div key={item} className="flex items-center gap-2.5">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-[#157DA0] shrink-0" />
-                        <span className="text-[13px] text-[#3D4550]">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <div className="pt-4 border-t border-[#D6D4CF]">
-                  <h4 className="text-[10px] font-bold tracking-widest text-[#9A9EA4] uppercase mb-3">Industries Served</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {svc.industries.map((ind) => (
-                      <span key={ind} className="px-3 py-1 text-[11px] font-medium text-[#6A7280] bg-white border border-[#D6D4CF] rounded">
-                        {ind}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <AnimateIn delay={90} className="lg:col-span-8 space-y-4">
+                {block.paragraphs.map((p) => (
+                  <p key={p} className="text-[15px] text-ink-500 leading-relaxed">
+                    {p}
+                  </p>
+                ))}
               </AnimateIn>
             </div>
           </div>
         </section>
       ))}
 
-      {/* ── CTA — DARK ── */}
-      <section className="bg-[#141A20] py-20 border-t border-[#2A3340]">
+      {/* ── Project & Site Management ── */}
+      <section className="bg-steel-900 steel-grain py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-xl">
-            <h2 className="text-2xl sm:text-3xl font-black text-[#E4E7EA] mb-4">Not sure which service fits your project?</h2>
-            <p className="text-[15px] text-[#8A9098] leading-relaxed mb-8">
-              Reach out and describe what you're working on. We'll point you in the right direction and provide a clear quote.
-            </p>
-            <Link href="/contact" className="inline-flex items-center gap-2 px-6 py-3 bg-[#157DA0] hover:bg-[#106480] text-white font-semibold text-[14px] rounded transition-colors duration-150">
-              Get a Free Quote <ArrowRight className="w-4 h-4" />
-            </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <AnimateIn className="lg:col-span-5">
+              <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 mb-6 tracking-tight">
+                Project &amp; Site Management
+              </h2>
+              <div className="space-y-4 text-[15px] text-chrome-400 leading-relaxed">
+                <p>
+                  Strong project management is the foundation of successful construction and facility
+                  improvement work.
+                </p>
+                <p>
+                  Solutions Contracting Group provides the planning, coordination, and oversight
+                  necessary to keep projects organized and progressing.
+                </p>
+                <p className="text-chrome-200">
+                  Our customers have one point of contact responsible for coordinating the project
+                  and keeping the various moving parts aligned.
+                </p>
+              </div>
+            </AnimateIn>
+
+            <AnimateIn delay={90} className="lg:col-span-7">
+              <h3 className="text-[10px] font-bold tracking-[0.2em] text-chrome-500 uppercase mb-5">
+                Services may include
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
+                {managementServices.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 py-2.5 border-b border-steel-700"
+                  >
+                    <Check className="w-3.5 h-3.5 text-azure-400 shrink-0 mt-1" />
+                    <span className="text-[13.5px] text-chrome-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </AnimateIn>
           </div>
+        </div>
+      </section>
+
+      {/* ── Multi-Trade Coordination ── */}
+      <section className="bg-mist-50 py-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <AnimateIn className="lg:col-span-4">
+              <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight">
+                Multi-Trade Project Coordination
+              </h2>
+            </AnimateIn>
+            <AnimateIn delay={90} className="lg:col-span-8 space-y-4">
+              <p className="text-[15px] text-ink-500 leading-relaxed">
+                Industrial improvement projects frequently require several different trades working
+                together.
+              </p>
+              <p className="text-[15px] text-ink-500 leading-relaxed">
+                Solutions Contracting Group manages the overall project and coordinates the qualified
+                subcontractors necessary to complete each scope of work.
+              </p>
+              <p className="text-[15px] text-ink-700 leading-relaxed bg-white border border-mist-200 rounded-lg p-5">
+                Electrical, plumbing, and other specialty work requiring separate trade licensing is
+                performed by appropriately licensed subcontractors.
+              </p>
+              <p className="text-[15px] text-ink-500 leading-relaxed">
+                This approach allows our customers to work through one general contractor rather than
+                managing multiple contractors independently.
+              </p>
+            </AnimateIn>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Capabilities ── */}
+      <section className="bg-mist-100 py-20 border-t border-mist-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimateIn className="mb-10 max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl font-black text-ink-900 mb-3 tracking-tight">
+              Capabilities
+            </h2>
+            <p className="text-[14px] text-ink-500 leading-relaxed">
+              Depending on the requirements of the project, scopes may include:
+            </p>
+          </AnimateIn>
+
+          <AnimateIn delay={80} className="flex flex-wrap gap-2.5">
+            {capabilities.map((item) => (
+              <span
+                key={item}
+                className="px-4 py-2 text-[13px] font-medium text-ink-700 bg-white border border-mist-300 rounded"
+              >
+                {item}
+              </span>
+            ))}
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="bg-steel-950 steel-grain py-20 border-t border-steel-700">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <AnimateIn className="max-w-2xl">
+            <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 mb-4 tracking-tight">
+              Have a facility project that needs to get done?
+            </h2>
+            <p className="text-[15px] text-chrome-400 leading-relaxed mb-8">
+              Bring us the problem. We&apos;ll help develop the plan and coordinate the path forward.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-azure-500 hover:bg-azure-600 text-white font-semibold text-[14px] rounded transition-colors duration-150"
+            >
+              Discuss Your Project <ArrowRight className="w-4 h-4" />
+            </Link>
+          </AnimateIn>
         </div>
       </section>
     </div>

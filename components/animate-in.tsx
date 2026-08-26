@@ -5,17 +5,24 @@ import { useEffect, useRef, useState } from "react";
 interface AnimateInProps {
   children: React.ReactNode;
   className?: string;
-  delay?: number; // ms
-  as?: keyof JSX.IntrinsicElements;
+  /** stagger in milliseconds */
+  delay?: number;
 }
 
-export function AnimateIn({ children, className = "", delay = 0, as: Tag = "div" }: AnimateInProps) {
-  const ref = useRef<HTMLElement>(null);
+export function AnimateIn({ children, className = "", delay = 0 }: AnimateInProps) {
+  const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+
+    // Respect the user's motion preference — show immediately, no transition.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,13 +32,13 @@ export function AnimateIn({ children, className = "", delay = 0, as: Tag = "div"
       },
       { threshold: 0.08 }
     );
+
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
 
   return (
-    // @ts-expect-error dynamic tag
-    <Tag
+    <div
       ref={ref}
       className={className}
       style={{
@@ -41,6 +48,6 @@ export function AnimateIn({ children, className = "", delay = 0, as: Tag = "div"
       }}
     >
       {children}
-    </Tag>
+    </div>
   );
 }

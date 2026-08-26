@@ -21,7 +21,6 @@ const navLinks = [
     ],
   },
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/before-after", label: "Before & After" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ];

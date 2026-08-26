@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { AnimateIn } from "@/components/animate-in";
 import { Phone, Mail, MapPin, Clock, CheckCircle2 } from "lucide-react";
 
 type FormData = {
@@ -28,11 +29,12 @@ export default function ContactPage() {
     <div>
       {/* ── Header — DARK ── */}
       <section className="bg-[#1C2128] pt-[62px]">
+        <style>{`@keyframes hero-text-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }`}</style>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3">Get in Touch</p>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight">Contact Us</h1>
-            <p className="text-[16px] text-[#8A9098] leading-relaxed">
+            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3" style={{ animation: "hero-text-in 0.6s ease 0.05s both" }}>Get in Touch</p>
+            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight" style={{ animation: "hero-text-in 0.6s ease 0.18s both" }}>Contact Us</h1>
+            <p className="text-[16px] text-[#8A9098] leading-relaxed" style={{ animation: "hero-text-in 0.6s ease 0.3s both" }}>
               Ready to start a project or have a question? Fill out the form and we'll get back to you within one business day.
             </p>
           </div>
@@ -44,7 +46,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
             {/* Sidebar */}
-            <div className="space-y-6">
+            <AnimateIn className="space-y-6">
               {[
                 { icon: Phone, label: "Phone", value: "(980) 339-0527", sub: "Mon–Fri, 7am–6pm", href: "tel:9803390527" },
                 { icon: Mail, label: "Email", value: "info@solutionswelding.com", sub: "Response within 24 hours", href: "mailto:info@solutionswelding.com" },
@@ -76,10 +78,10 @@ export default function ContactPage() {
                   </div>
                 ))}
               </div>
-            </div>
+            </AnimateIn>
 
             {/* Form */}
-            <div className="lg:col-span-2">
+            <AnimateIn delay={120} className="lg:col-span-2">
               {submitted ? (
                 <div className="bg-white border border-[#D6D4CF] rounded-lg p-10 text-center">
                   <CheckCircle2 className="w-10 h-10 text-[#157DA0] mx-auto mb-4" />
@@ -164,7 +166,7 @@ export default function ContactPage() {
                   </div>
                 </form>
               )}
-            </div>
+            </AnimateIn>
           </div>
         </div>
       </section>

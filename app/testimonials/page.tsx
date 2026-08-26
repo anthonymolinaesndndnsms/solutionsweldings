@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { AnimateIn } from "@/components/animate-in";
 
 const testimonials = [
   { quote: "We've worked with several welding contractors over the years and Solutions Welding is in a different league. They came to the site on schedule, executed cleanly, and handed us documentation we could actually use for our FDA audit. That's rare.", name: "David M.", title: "Plant Manager", company: "Regional Dairy Processor", category: "Sanitary" },
@@ -30,11 +31,12 @@ export default function TestimonialsPage() {
   return (
     <div>
       <section className="bg-[#1C2128] pt-[62px]">
+        <style>{`@keyframes hero-text-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }`}</style>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3">What Clients Say</p>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight">Testimonials</h1>
-            <p className="text-[16px] text-[#8A9098] leading-relaxed">
+            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3" style={{ animation: "hero-text-in 0.6s ease 0.05s both" }}>What Clients Say</p>
+            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight" style={{ animation: "hero-text-in 0.6s ease 0.18s both" }}>Testimonials</h1>
+            <p className="text-[16px] text-[#8A9098] leading-relaxed" style={{ animation: "hero-text-in 0.6s ease 0.3s both" }}>
               Feedback from plant managers, facilities directors, architects, and property owners who've hired us and come back for more.
             </p>
           </div>
@@ -44,7 +46,7 @@ export default function TestimonialsPage() {
       {/* Featured carousel — DARK */}
       <section className="bg-[#232B33] py-20 border-b border-[#2A3340]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto">
+          <AnimateIn className="max-w-3xl mx-auto">
             <div className="bg-[#1C2128] border border-[#2A3340] rounded-lg p-8 sm:p-10 min-h-[220px]">
               <span className="px-2 py-0.5 text-[10px] font-semibold text-[#2490B8] bg-[#232B33] border border-[#2A3340] rounded uppercase tracking-wider mb-5 inline-block">
                 {t.category}
@@ -70,26 +72,26 @@ export default function TestimonialsPage() {
                 <button onClick={next} className="p-2 border border-[#2A3340] hover:border-[#3A4A5A] text-[#8A9098] hover:text-[#E4E7EA] rounded transition-colors duration-150"><ChevronRight className="w-4 h-4" /></button>
               </div>
             </div>
-          </div>
+          </AnimateIn>
         </div>
       </section>
 
       {/* Full grid — LIGHT */}
       <section className="bg-[#F2F1EE] py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="mb-10">
+          <AnimateIn className="mb-10">
             <h2 className="text-2xl sm:text-3xl font-black text-[#15191E]">All Reviews</h2>
-          </div>
+          </AnimateIn>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {testimonials.map((item, i) => (
-              <div key={i} className="bg-white border border-[#D6D4CF] rounded-lg p-6 flex flex-col">
+              <AnimateIn key={i} delay={i * 60} className="bg-white border border-[#D6D4CF] rounded-lg p-6 flex flex-col">
                 <span className="text-[10px] font-semibold text-[#9A9EA4] tracking-widest uppercase mb-4">{item.category}</span>
                 <blockquote className="text-[13px] text-[#6A7280] leading-relaxed flex-1 mb-5">"{item.quote}"</blockquote>
                 <div className="border-t border-[#E8E6E1] pt-4">
                   <div className="text-[13px] font-bold text-[#15191E]">{item.name}</div>
                   <div className="text-[11px] text-[#9A9EA4]">{item.title} — {item.company}</div>
                 </div>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>

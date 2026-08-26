@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { AnimateIn } from "@/components/animate-in";
 
 const services = [
   {
@@ -46,11 +47,12 @@ export default function ServicesPage() {
     <div>
       {/* ── Header — DARK ── */}
       <section className="bg-[#1C2128] pt-[62px]">
+        <style>{`@keyframes hero-text-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }`}</style>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
           <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3">What We Offer</p>
-            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight">Services</h1>
-            <p className="text-[16px] text-[#8A9098] leading-relaxed">
+            <p className="text-[11px] font-semibold tracking-[0.2em] text-[#157DA0] uppercase mb-3" style={{ animation: "hero-text-in 0.6s ease 0.05s both" }}>What We Offer</p>
+            <h1 className="text-4xl sm:text-5xl font-black text-[#E4E7EA] mb-5 leading-tight" style={{ animation: "hero-text-in 0.6s ease 0.18s both" }}>Services</h1>
+            <p className="text-[16px] text-[#8A9098] leading-relaxed" style={{ animation: "hero-text-in 0.6s ease 0.3s both" }}>
               Five specialized service lines. One unified commitment to quality. From sanitary welding to full renovations and electrical — we deliver certified results.
             </p>
           </div>
@@ -62,7 +64,7 @@ export default function ServicesPage() {
         <section key={svc.tag} className={`py-20 ${i % 2 === 0 ? "bg-[#F2F1EE]" : "bg-[#E8E6E1]"}`}>
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
-              <div>
+              <AnimateIn>
                 <div className="flex items-center gap-3 mb-5">
                   <span className="text-[11px] font-black text-[#9A9EA4] tracking-widest">{svc.tag}</span>
                   <div className="w-8 h-px bg-[#D6D4CF]" />
@@ -77,8 +79,8 @@ export default function ServicesPage() {
                 >
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Link>
-              </div>
-              <div className="space-y-6">
+              </AnimateIn>
+              <AnimateIn delay={100} className="space-y-6">
                 <div>
                   <h4 className="text-[10px] font-bold tracking-widest text-[#9A9EA4] uppercase mb-4">Capabilities</h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-2.5 gap-x-4">
@@ -100,7 +102,7 @@ export default function ServicesPage() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </AnimateIn>
             </div>
           </div>
         </section>

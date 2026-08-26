@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,15 +15,8 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-/** Scrolling past this many pixels before the header may hide. */
-const HIDE_AFTER = 120;
-/** Ignore jitter below this many pixels of movement. */
-const SCROLL_NOISE = 6;
-
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastY = useRef(0);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -37,43 +30,9 @@ export default function Navigation() {
     };
   }, [mobileOpen]);
 
-  // Slide the header out of the way on the way down, bring it back on the
-  // way up. Reads are batched into a frame so the listener stays cheap.
-  useEffect(() => {
-    lastY.current = window.scrollY;
-    let frame = 0;
-
-    const onScroll = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        const y = window.scrollY;
-        const delta = y - lastY.current;
-
-        if (Math.abs(delta) > SCROLL_NOISE) {
-          setHidden(y > HIDE_AFTER && delta > 0);
-          lastY.current = y;
-        }
-      });
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
-  }, []);
-
-  // Never leave the header hidden behind an open mobile drawer.
-  const offscreen = hidden && !mobileOpen;
-
   return (
     <>
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-steel-900 steel-grain border-b border-steel-700 transition-transform duration-300 ease-out motion-reduce:transition-none ${
-          offscreen ? "-translate-y-full" : "translate-y-0"
-        }`}
-      >
+      <header className="fixed top-0 left-0 right-0 z-50 bg-steel-900 steel-grain border-b border-steel-700">
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[84px] flex items-center justify-between">
           <Link href="/" className="flex items-center shrink-0" aria-label="SCG Solutions Contracting Group — home">
             <Image

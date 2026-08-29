@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "Industrial General Contracting Services",
@@ -60,40 +61,25 @@ const capabilities = [
 export default function ServicesPage() {
   return (
     <div>
-      {/* ── Header ── */}
-      <section className="bg-steel-900 steel-grain pt-[84px] border-b border-steel-700">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-          <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold tracking-[0.28em] text-azure-400 uppercase mb-5 rise-in">
-              Services
-            </p>
-            <h1
-              className="text-4xl sm:text-5xl font-black text-chrome-100 mb-7 leading-[1.1] tracking-tight rise-in"
-              style={{ animationDelay: "0.14s" }}
-            >
-              Industrial General Contracting Services
-            </h1>
-            <div
-              className="space-y-4 text-[15.5px] text-chrome-400 leading-relaxed rise-in"
-              style={{ animationDelay: "0.26s" }}
-            >
-              <p>
-                Solutions Contracting Group provides comprehensive general contracting, renovation,
-                facility improvement, and project management services for industrial facilities.
-              </p>
-              <p>
-                Every facility and every project presents different challenges. Our job is to
-                understand the customer&apos;s objectives, establish a clear scope of work,
-                coordinate the appropriate resources, and manage the project through completion.
-              </p>
-              <p>
-                Whether the project involves a single improvement or multiple coordinated scopes, we
-                provide the organization and oversight necessary to keep the work moving.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Services"
+        title="Industrial General Contracting Services"
+        image="/portfolio/5-star/20240920_092409.jpg"
+      >
+        <p>
+          Solutions Contracting Group provides comprehensive general contracting, renovation,
+          facility improvement, and project management services for industrial facilities.
+        </p>
+        <p>
+          Every facility and every project presents different challenges. Our job is to understand
+          the customer&apos;s objectives, establish a clear scope of work, coordinate the
+          appropriate resources, and manage the project through completion.
+        </p>
+        <p>
+          Whether the project involves a single improvement or multiple coordinated scopes, we
+          provide the organization and oversight necessary to keep the work moving.
+        </p>
+      </PageHero>
 
       {/* ── Renovations + Improvements ── */}
       {serviceBlocks.map((block, i) => (

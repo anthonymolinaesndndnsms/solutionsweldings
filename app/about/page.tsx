@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
   title: "About",
@@ -39,43 +40,17 @@ const approach = [
 export default function AboutPage() {
   return (
     <div>
-      {/* ── Hero ── */}
-      <section className="relative bg-steel-900 steel-grain pt-[84px] overflow-hidden border-b border-steel-700">
-        <div
-          className="absolute inset-0 opacity-[0.12] bg-cover bg-center"
-          style={{ backgroundImage: "url('/portfolio/5-star/PXL_20250923_132219409.jpg')" }}
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(115deg, rgba(16,21,26,0.97) 0%, rgba(16,21,26,0.88) 60%, rgba(11,14,18,0.95) 100%)",
-          }}
-          aria-hidden
-        />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
-          <div className="max-w-3xl">
-            <p className="text-[11px] font-semibold tracking-[0.28em] text-azure-400 uppercase mb-5 rise-in">
-              About
-            </p>
-            <h1
-              className="text-4xl sm:text-5xl lg:text-[58px] font-black text-chrome-100 mb-7 leading-[1.08] tracking-tight rise-in"
-              style={{ animationDelay: "0.14s" }}
-            >
-              Built Around the Project.
-            </h1>
-            <p
-              className="text-[16px] text-chrome-400 leading-relaxed max-w-2xl rise-in"
-              style={{ animationDelay: "0.26s" }}
-            >
-              Solutions Contracting Group is a licensed general contractor providing general
-              contracting, renovation, facility improvement, and project management services for
-              industrial facilities.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="About"
+        title="Built Around the Project."
+        image="/portfolio/5-star/IMG-20251007-WA0014.jpg"
+      >
+        <p>
+          Solutions Contracting Group is a licensed general contractor providing general
+          contracting, renovation, facility improvement, and project management services for
+          industrial facilities.
+        </p>
+      </PageHero>
 
       {/* ── Not in a vacuum ── */}
       <section className="bg-mist-50 py-20">

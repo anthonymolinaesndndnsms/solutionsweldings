@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Phone, Mail, MapPin, Clock, CheckCircle2, AlertCircle } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { PageHero } from "@/components/page-hero";
 
 type FormData = {
   name: string;
@@ -51,36 +52,20 @@ export default function ContactPage() {
 
   return (
     <div>
-      {/* ── Header ── */}
-      <section className="bg-steel-900 steel-grain pt-[84px] border-b border-steel-700">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-          <div className="max-w-2xl">
-            <p className="text-[11px] font-semibold tracking-[0.28em] text-azure-400 uppercase mb-5 rise-in">
-              Contact
-            </p>
-            <h1
-              className="text-4xl sm:text-5xl font-black text-chrome-100 mb-7 leading-[1.1] tracking-tight rise-in"
-              style={{ animationDelay: "0.14s" }}
-            >
-              Let&apos;s Talk About Your Project
-            </h1>
-            <div
-              className="space-y-4 text-[15.5px] text-chrome-400 leading-relaxed rise-in"
-              style={{ animationDelay: "0.26s" }}
-            >
-              <p>
-                Have a renovation, facility improvement, or general contracting project that needs to
-                move forward? Tell us what you&apos;re working on.
-              </p>
-              <p>
-                Solutions Contracting Group works with industrial customers to evaluate project
-                needs, develop scopes, coordinate qualified resources, and manage projects through
-                completion.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        eyebrow="Contact"
+        title={"Let’s Talk About Your Project"}
+        image="/portfolio/5-star/IMG-20251007-WA0018.jpg"
+      >
+        <p>
+          Have a renovation, facility improvement, or general contracting project that needs to
+          move forward? Tell us what you&apos;re working on.
+        </p>
+        <p>
+          Solutions Contracting Group works with industrial customers to evaluate project needs,
+          develop scopes, coordinate qualified resources, and manage projects through completion.
+        </p>
+      </PageHero>
 
       {/* ── Main ── */}
       <section className="bg-mist-50 py-20">

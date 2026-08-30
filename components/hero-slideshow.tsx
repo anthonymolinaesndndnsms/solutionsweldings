@@ -5,27 +5,39 @@ import { useEffect, useState } from "react";
 /**
  * Project photos behind the home hero, ordered to show range: heavy
  * industrial, process equipment, structural work, then finished interiors.
+ *
+ * These are pre-cropped to 16:9 and capped at 2200px in public/hero. The
+ * originals are 12-megapixel camera files — compositing one of those while
+ * it animates is what makes the drift stutter.
  */
 const SLIDES = [
-  "/portfolio/5-star/20240920_092353.jpg",
-  "/portfolio/5-star/FB_IMG_1633285804768.jpg",
-  "/portfolio/5-star/IMG_4243 (1).jpg",
-  "/portfolio/5-star/PXL_20250506_151513173.jpg",
-  "/portfolio/5-star/PXL_20210909_112506265.jpg",
+  "/hero/hero-1.jpg",
+  "/hero/hero-2.jpg",
+  "/hero/hero-3.jpg",
+  "/hero/hero-4.jpg",
+  "/hero/hero-5.jpg",
 ];
 
-const INTERVAL_MS = 6000;
+const INTERVAL_MS = 6500;
+const FADE_MS = 1800;
 
 export function HeroSlideshow() {
   const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(true);
+
+  // Decode every frame up front. Left to itself the browser decodes a frame
+  // the moment it is first painted — which is exactly when it cross-fades
+  // in, so the first second of its drift stutters. Warming them costs
+  // nothing visible and the files are small.
+  useEffect(() => {
+    SLIDES.slice(1).forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      void img.decode?.().catch(() => {});
+    });
+  }, []);
 
   useEffect(() => {
-    // Hold on a single frame for anyone who has asked for less motion.
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setAnimate(false);
-      return;
-    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const timer = window.setInterval(
       () => setIndex((i) => (i + 1) % SLIDES.length),
@@ -42,26 +54,21 @@ export function HeroSlideshow() {
           key={src}
           src={src}
           alt=""
-          // The first frame is what visitors see immediately; the rest can
-          // stream in behind the shade before their turn comes around.
-          loading={i === 0 ? "eager" : "lazy"}
+          // All frames load eagerly — lazy-loading defers the fetch until the
+          // frame is painted, which is the moment it fades in.
+          loading="eager"
           fetchPriority={i === 0 ? "high" : "low"}
           decoding="async"
-          className="absolute inset-0 w-full h-full object-cover object-center"
+          className="hero-drift absolute inset-0 w-full h-full object-cover object-center"
           style={{
-            opacity: animate ? (i === index ? 1 : 0) : i === 0 ? 1 : 0,
-            transition: "opacity 1.6s ease-in-out",
-            // Slow drift on the visible frame so the hero never feels static.
-            transform: animate && i === index ? "scale(1.06)" : "scale(1)",
-            transitionProperty: "opacity, transform",
-            transitionDuration: "1.6s, 7s",
-            transitionTimingFunction: "ease-in-out, ease-out",
+            opacity: i === index ? 1 : 0,
+            transition: `opacity ${FADE_MS}ms ease-in-out`,
           }}
         />
       ))}
 
-      {/* Shade cover — a flat scrim plus a directional gradient so the
-          headline keeps its contrast wherever a photo runs light. */}
+      {/* Shade cover — a flat scrim plus two gradients so the headline keeps
+          its contrast wherever a photo runs light. */}
       <div className="absolute inset-0 bg-steel-950/45" />
       <div
         className="absolute inset-0"

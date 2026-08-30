@@ -96,3 +96,21 @@ body {
   html { scroll-behavior: auto; }
   .rise-in { animation: none; }
 }
+
+/* Slow continuous drift behind the home hero. Every frame shares one
+   animation so the zoom never resets between cross-fades — a per-slide
+   animation would snap back to scale(1) while the outgoing frame was
+   still visible. */
+@keyframes hero-drift {
+  from { transform: scale(1) translateZ(0); }
+  to   { transform: scale(1.09) translateZ(0); }
+}
+.hero-drift {
+  animation: hero-drift 26s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-drift { animation: none; }
+}

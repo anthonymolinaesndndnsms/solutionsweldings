@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 
 const whatWeDo = [
   {
@@ -36,20 +37,8 @@ export default function HomePage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="relative bg-steel-900 steel-grain pt-[84px] overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.13] bg-cover bg-center"
-          style={{ backgroundImage: "url('/portfolio/5-star/PXL_20251028_145614273.jpg')" }}
-          aria-hidden
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(115deg, rgba(16,21,26,0.97) 0%, rgba(16,21,26,0.86) 55%, rgba(11,14,18,0.94) 100%)",
-          }}
-          aria-hidden
-        />
+      <section className="relative bg-steel-900 pt-[84px] overflow-hidden">
+        <HeroSlideshow />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">
           <div className="max-w-3xl">

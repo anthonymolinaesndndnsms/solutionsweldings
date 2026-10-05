@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/brand/scg-og.png", width: 1200, height: 630, alt: "SCG Solutions Contracting Group" }],
+    images: [{ url: "/brand/scg-share.png", width: 1200, height: 630, alt: "SCG Solutions Contracting Group" }],
   },
 };
 

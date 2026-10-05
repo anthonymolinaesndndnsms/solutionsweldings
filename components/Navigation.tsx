@@ -36,9 +36,9 @@ export default function Navigation() {
         <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[84px] flex items-center justify-between">
           <Link href="/" className="flex items-center shrink-0" aria-label="SCG Solutions Contracting Group — home">
             <Image
-              src="/brand/scg-logo-dark-nav.png"
+              src="/brand/scg-lockup-nav.png"
               alt="SCG Solutions Contracting Group"
-              width={365}
+              width={391}
               height={260}
               priority
               className="h-[62px] w-auto"
@@ -109,9 +109,9 @@ export default function Navigation() {
             >
               <div className="flex items-center justify-between px-5 h-[84px] border-b border-steel-700">
                 <Image
-                  src="/brand/scg-logo-dark-nav.png"
+                  src="/brand/scg-lockup-nav.png"
                   alt="SCG Solutions Contracting Group"
-                  width={365}
+                  width={391}
                   height={260}
                   className="h-[40px] w-auto"
                 />

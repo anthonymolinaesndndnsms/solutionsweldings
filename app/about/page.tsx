@@ -28,7 +28,7 @@ const approach = [
     body: "Every successful project starts with a clear understanding of the objective. We evaluate the project requirements, help establish the scope, identify the resources needed, and develop a practical path forward.",
   },
   {
-    key: "Build",
+    key: "Manage",
     body: "Once the plan is established, we coordinate the people, materials, subcontractors, schedules, and site activities necessary to execute the work.",
   },
   {
@@ -156,7 +156,7 @@ export default function AboutPage() {
               className="h-[130px] w-auto mb-10 opacity-95"
             />
             <p className="text-[13px] font-black text-chrome-200 uppercase tracking-[0.32em] mb-5">
-              Plan · Build · Deliver
+              Plan · Manage · Deliver
             </p>
             <p className="text-[15px] text-chrome-400 max-w-md leading-relaxed mb-10">
               It&apos;s more than a tagline. It&apos;s how we approach every project.

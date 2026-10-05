@@ -160,7 +160,7 @@ export default function Navigation() {
                   Request a Quote
                 </Link>
                 <p className="text-center text-[10px] text-chrome-500 tracking-[0.18em] uppercase pt-1">
-                  Plan · Build · Deliver
+                  Plan · Manage · Deliver
                 </p>
               </div>
             </motion.div>

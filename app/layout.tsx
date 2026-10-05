@@ -50,7 +50,7 @@ const organizationSchema = {
   description,
   telephone: "+1-980-339-0527",
   email: "info@solutionswelding.com",
-  slogan: "Plan · Build · Deliver",
+  slogan: "Plan · Manage · Deliver",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Fort Mill",

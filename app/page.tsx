@@ -24,7 +24,7 @@ const phases = [
     body: "Understand the objective. Define the scope. Establish the schedule and resources required to move forward.",
   },
   {
-    key: "Build",
+    key: "Manage",
     body: "Coordinate the people, materials, subcontractors, and site activities necessary to execute the work.",
   },
   {
@@ -46,7 +46,7 @@ export default function HomePage() {
               className="text-[11px] font-semibold tracking-[0.28em] text-azure-400 uppercase mb-7 rise-in"
               style={{ animationDelay: "0.05s" }}
             >
-              Plan · Build · Deliver
+              Plan · Manage · Deliver
             </p>
             <h1
               className="text-4xl sm:text-5xl lg:text-[62px] font-black text-chrome-100 leading-[1.06] tracking-tight mb-7 rise-in"
@@ -158,12 +158,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Plan / Build / Deliver ── */}
+      {/* ── Plan / Manage / Deliver ── */}
       <section className="bg-mist-100 py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimateIn className="mb-14">
             <h2 className="text-3xl sm:text-4xl font-black text-ink-900 tracking-tight">
-              Plan <span className="text-azure-500">·</span> Build{" "}
+              Plan <span className="text-azure-500">·</span> Manage{" "}
               <span className="text-azure-500">·</span> Deliver
             </h2>
           </AnimateIn>

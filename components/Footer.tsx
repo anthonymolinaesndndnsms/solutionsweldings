@@ -35,7 +35,7 @@ export default function Footer() {
               management for industrial facilities.
             </p>
             <p className="text-[10px] text-chrome-500 tracking-[0.18em] uppercase">
-              Plan · Build · Deliver
+              Plan · Manage · Deliver
             </p>
           </div>
 

@@ -24,10 +24,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           <div>
             <Image
-              src="/brand/scg-logo-nav.png"
+              src="/brand/scg-logo-dark-nav.png"
               alt="SCG Solutions Contracting Group"
-              width={263}
-              height={180}
+              width={365}
+              height={260}
               className="h-[62px] w-auto mb-5"
             />
             <p className="text-[13px] text-chrome-500 leading-relaxed max-w-xs mb-4">

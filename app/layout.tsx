@@ -31,15 +31,15 @@ export const metadata: Metadata = {
     "South Carolina",
   ],
   icons: {
-    icon: "/brand/scg-mark.png",
-    apple: "/brand/scg-mark.png",
+    icon: "/brand/scg-icon.png",
+    apple: "/brand/scg-icon.png",
   },
   openGraph: {
     title: "SCG Solutions Contracting Group",
     description,
     type: "website",
     locale: "en_US",
-    images: [{ url: "/brand/scg-logo.png", width: 1256, height: 859, alt: "SCG Solutions Contracting Group" }],
+    images: [{ url: "/brand/scg-og.png", width: 1200, height: 630, alt: "SCG Solutions Contracting Group" }],
   },
 };
 

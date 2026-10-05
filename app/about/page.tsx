@@ -149,10 +149,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimateIn className="flex flex-col items-center text-center">
             <Image
-              src="/brand/scg-logo.png"
+              src="/brand/scg-logo-dark.png"
               alt="SCG Solutions Contracting Group"
-              width={1256}
-              height={859}
+              width={1453}
+              height={1035}
               className="h-[130px] w-auto mb-10 opacity-95"
             />
             <p className="text-[13px] font-black text-chrome-200 uppercase tracking-[0.32em] mb-5">

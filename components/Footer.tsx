@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const siteLinks = [
@@ -18,10 +21,15 @@ const serviceLinks = [
 ];
 
 export default function Footer() {
+  // The Contact page shows these details in its own section, so the footer
+  // leaves them out there rather than repeating them. Every other page
+  // keeps them here.
+  const showContact = usePathname() !== "/contact";
+
   return (
     <footer className="bg-steel-950 steel-grain border-t border-steel-700">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${showContact ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-10 mb-12`}>
           <div>
             <Image
               src="/brand/scg-lockup-nav.png"
@@ -75,6 +83,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {showContact && (
           <div>
             <h4 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
               Contact
@@ -114,6 +123,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          )}
         </div>
 
         <div className="border-t border-steel-700 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">

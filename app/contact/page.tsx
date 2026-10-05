@@ -20,24 +20,24 @@ type Row = {
   | { icon?: never; silhouette: { src: string; width: number; height: number } }
 );
 
-// Phone, email and location stay as they were. The licence rows copy the back
-// of the business card: the state outline beside two bold uppercase lines,
-// "NC GENERAL CONTRACTOR" over its number, then the same for SC.
+// Phone, email and location stay as they were. The old single "Licensed" row
+// is now one row per state: state first, then the licence wording from the
+// business card.
 const rows: Row[] = [
   { icon: Phone, label: "Phone", value: "(980) 339-0527", sub: "Mon–Fri, 7am–6pm", href: "tel:9803390527" },
   { icon: Mail, label: "Email", value: "info@solutionswelding.com", sub: "We reply within one business day", href: "mailto:info@solutionswelding.com" },
   { icon: MapPin, label: "Based In", value: "Fort Mill, SC", sub: "Serving North & South Carolina", href: null },
   {
-    label: "NC GENERAL CONTRACTOR",
-    value: "L.108274",
-    sub: "",
+    label: "North Carolina",
+    value: "General Contractor",
+    sub: "L.108274",
     href: null,
     silhouette: { src: "/brand/state-nc-blue.png", width: 144, height: 74 },
   },
   {
-    label: "SC GENERAL CONTRACTOR",
-    value: "CLG.127227.GC",
-    sub: "",
+    label: "South Carolina",
+    value: "General Contractor",
+    sub: "CLG.127227.GC",
     href: null,
     silhouette: { src: "/brand/state-sc-blue.png", width: 124, height: 97 },
   },
@@ -79,29 +79,22 @@ export default function ContactPage() {
                     <row.icon className="w-6 h-6 text-azure-500" />
                   )}
                 </div>
-                {row.silhouette ? (
-                  <div className="min-w-0 text-[18px] sm:text-[20px] font-bold uppercase tracking-[0.04em] text-ink-900 leading-snug">
-                    <div>{row.label}</div>
-                    <div>{row.value}</div>
+                <div className="min-w-0">
+                  <div className="text-[11px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-1">
+                    {row.label}
                   </div>
-                ) : (
-                  <div className="min-w-0">
-                    <div className="text-[11px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-1">
-                      {row.label}
-                    </div>
-                    {row.href ? (
-                      <a
-                        href={row.href}
-                        className="text-[18px] font-semibold text-ink-900 hover:text-azure-500 transition-colors duration-150 block break-words"
-                      >
-                        {row.value}
-                      </a>
-                    ) : (
-                      <div className="text-[18px] font-semibold text-ink-900">{row.value}</div>
-                    )}
-                    <div className="text-[13.5px] text-ink-400 mt-0.5">{row.sub}</div>
-                  </div>
-                )}
+                  {row.href ? (
+                    <a
+                      href={row.href}
+                      className="text-[18px] font-semibold text-ink-900 hover:text-azure-500 transition-colors duration-150 block break-words"
+                    >
+                      {row.value}
+                    </a>
+                  ) : (
+                    <div className="text-[18px] font-semibold text-ink-900">{row.value}</div>
+                  )}
+                  <div className="text-[13.5px] text-ink-400 mt-0.5">{row.sub}</div>
+                </div>
               </div>
             ))}
 

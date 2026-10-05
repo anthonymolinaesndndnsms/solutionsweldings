@@ -61,44 +61,54 @@ export default function ContactPage() {
         </p>
       </PageHero>
 
-      <section className="bg-mist-50 py-16">
-        <div className="max-w-xl mx-auto px-6 lg:px-8">
-          <AnimateIn className="space-y-6">
-            {rows.map((row) => (
-              <div key={row.label} className="flex items-center gap-5">
-                <div className="w-16 h-16 rounded bg-white border border-mist-300 flex items-center justify-center shrink-0">
-                  {row.silhouette ? (
-                    <Image
-                      src={row.silhouette.src}
-                      alt=""
-                      width={row.silhouette.width}
-                      height={row.silhouette.height}
-                      className="w-9 h-9 object-contain"
-                    />
-                  ) : (
-                    <row.icon className="w-6 h-6 text-azure-500" />
-                  )}
+      <section className="bg-mist-50 py-20 lg:py-24">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8">
+          <AnimateIn>
+            {/* Contact details on the left, licences on the right at wide
+                widths; stacked on phones. */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-8">
+              {[rows.slice(0, 3), rows.slice(3)].map((group, g) => (
+                <div key={g} className="space-y-8">
+                  {group.map((row) => (
+                    <div key={row.label} className="flex items-center gap-6">
+                      <div className="w-20 h-20 rounded bg-white border border-mist-300 flex items-center justify-center shrink-0">
+                        {row.silhouette ? (
+                          <Image
+                            src={row.silhouette.src}
+                            alt=""
+                            width={row.silhouette.width}
+                            height={row.silhouette.height}
+                            className="w-11 h-11 object-contain"
+                          />
+                        ) : (
+                          <row.icon className="w-8 h-8 text-azure-500" />
+                        )}
+                      </div>
+                      <div className="min-w-0">
+                        <div className="text-[12px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-1.5">
+                          {row.label}
+                        </div>
+                        {row.href ? (
+                          <a
+                            href={row.href}
+                            className="text-[22px] font-semibold text-ink-900 hover:text-azure-500 transition-colors duration-150 block break-words leading-tight"
+                          >
+                            {row.value}
+                          </a>
+                        ) : (
+                          <div className="text-[22px] font-semibold text-ink-900 leading-tight">
+                            {row.value}
+                          </div>
+                        )}
+                        <div className="text-[15px] text-ink-400 mt-1">{row.sub}</div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="min-w-0">
-                  <div className="text-[11px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-1">
-                    {row.label}
-                  </div>
-                  {row.href ? (
-                    <a
-                      href={row.href}
-                      className="text-[18px] font-semibold text-ink-900 hover:text-azure-500 transition-colors duration-150 block break-words"
-                    >
-                      {row.value}
-                    </a>
-                  ) : (
-                    <div className="text-[18px] font-semibold text-ink-900">{row.value}</div>
-                  )}
-                  <div className="text-[13.5px] text-ink-400 mt-0.5">{row.sub}</div>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
 
-            <p className="pt-7 border-t border-mist-200 text-[14.5px] text-ink-500 leading-relaxed">
+            <p className="mt-12 pt-8 border-t border-mist-200 text-[16px] text-ink-500 leading-relaxed max-w-3xl">
               Whether you&apos;re addressing an immediate facility need or planning an upcoming
               improvement, we&apos;re ready to discuss the project and determine the best path
               forward.

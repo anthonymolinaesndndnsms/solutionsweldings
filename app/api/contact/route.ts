@@ -38,11 +38,21 @@ export async function POST(request: Request) {
     receivedAt: new Date().toISOString(),
   };
 
-  // NOTE: delivery is not connected yet. Submissions are logged to the server
-  // console only — they do NOT reach an inbox. To go live, send `submission`
-  // from here via an email provider (Resend, SendGrid, Postmark, ...) and
-  // return 502 if that call fails so the form shows its error state.
-  console.info("[contact] submission received", submission);
+  // NOTE: delivery is not connected yet, so a submission currently goes
+  // nowhere. To go live, send `submission` from here via an email provider
+  // (Resend, SendGrid, Postmark, ...) and return 502 if that call fails so
+  // the form shows its error state.
+  //
+  // Never log the submission itself: it holds names, emails, phone numbers
+  // and project details, and server logs are retained and widely readable.
+  // Log only non-identifying metadata.
+  console.info("[contact] submission received", {
+    receivedAt: submission.receivedAt,
+    hasCompany: Boolean(submission.company),
+    hasPhone: Boolean(submission.phone),
+    hasLocation: Boolean(submission.location),
+    messageLength: submission.message.length,
+  });
 
   return NextResponse.json({ ok: true });
 }

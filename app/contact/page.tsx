@@ -65,23 +65,26 @@ export default function ContactPage() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <AnimateIn>
             {/* Contact details on the left, licences on the right at wide
-                widths; stacked on phones. */}
+                widths; stacked on phones. Rows are a fixed 80px with 32px
+                between, so pushing the licence column down 56px (half a
+                row) centres North Carolina between Phone and Email and
+                South Carolina between Email and Based In. */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-8">
               {[rows.slice(0, 3), rows.slice(3)].map((group, g) => (
-                <div key={g} className="space-y-8">
+                <div key={g} className={`space-y-8 ${g === 1 ? "lg:pt-14" : ""}`}>
                   {group.map((row) => (
-                    <div key={row.label} className="flex items-center gap-6">
-                      <div className="w-20 h-20 rounded bg-white border border-mist-300 flex items-center justify-center shrink-0">
+                    <div key={row.label} className="flex items-center gap-6 h-20">
+                      <div className="w-14 flex items-center justify-center shrink-0">
                         {row.silhouette ? (
                           <Image
                             src={row.silhouette.src}
                             alt=""
                             width={row.silhouette.width}
                             height={row.silhouette.height}
-                            className="w-11 h-11 object-contain"
+                            className="w-14 h-14 object-contain"
                           />
                         ) : (
-                          <row.icon className="w-8 h-8 text-azure-500" />
+                          <row.icon className="w-10 h-10 text-azure-500" strokeWidth={1.6} />
                         )}
                       </div>
                       <div className="min-w-0">

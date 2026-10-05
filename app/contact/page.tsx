@@ -74,8 +74,9 @@ export default function ContactPage() {
                 <div key={g} className={`space-y-8 ${g === 1 ? "lg:pt-14" : ""}`}>
                   {group.map((row) => (
                     <div key={row.label} className="flex items-center gap-6 h-20">
-                      <div className="w-14 flex items-center justify-center shrink-0">
-                        {row.silhouette ? (
+                      {row.silhouette ? (
+                        // Licences: no box, just the state outline.
+                        <div className="w-14 flex items-center justify-center shrink-0">
                           <Image
                             src={row.silhouette.src}
                             alt=""
@@ -83,10 +84,13 @@ export default function ContactPage() {
                             height={row.silhouette.height}
                             className="w-14 h-14 object-contain"
                           />
-                        ) : (
-                          <row.icon className="w-10 h-10 text-azure-500" strokeWidth={1.6} />
-                        )}
-                      </div>
+                        </div>
+                      ) : (
+                        // Phone, email, location: icon in the white square.
+                        <div className="w-20 h-20 rounded bg-white border border-mist-300 flex items-center justify-center shrink-0">
+                          <row.icon className="w-8 h-8 text-azure-500" />
+                        </div>
+                      )}
                       <div className="min-w-0">
                         <div className="text-[12px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-1.5">
                           {row.label}

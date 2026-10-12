@@ -69,82 +69,70 @@ export default function ContactPage() {
         </p>
       </PageHero>
 
-      <section className="bg-mist-50 py-20 lg:py-24">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8">
-          <AnimateIn>
-            {/* Contact details on the left, licences on the right at wide
-                widths; stacked on phones. Rows are a fixed 80px with 32px
-                between, so pushing the licence column down 56px (half a
-                row) centres North Carolina between Phone and Email and
-                South Carolina between Email and Based In. */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-8">
-              {[rows.slice(0, 3), rows.slice(3)].map((group, g) => (
-                <div key={g} className={`space-y-8 ${g === 1 ? "lg:pt-14" : ""}`}>
-                  {group.map((row) => (
-                    <div key={row.label} className="flex items-center gap-6 h-20">
-                      {row.silhouette ? (
-                        // Licences: no box, just the state outline.
-                        <div className="w-14 flex items-center justify-center shrink-0">
-                          <Image
-                            src={row.silhouette.src}
-                            alt=""
-                            width={row.silhouette.width}
-                            height={row.silhouette.height}
-                            className="w-14 h-14 object-contain"
-                          />
-                        </div>
-                      ) : (
-                        // Phone, email, location: icon in the white square.
-                        <div className="w-20 h-20 rounded bg-white border border-mist-300 flex items-center justify-center shrink-0">
-                          <row.icon className="w-8 h-8 text-azure-500" />
-                        </div>
-                      )}
-                      <div className="min-w-0">
-                        <div className="text-[12px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-1.5">
-                          {row.label}
-                        </div>
-                        {row.href ? (
-                          <a
-                            href={row.href}
-                            className="text-[22px] font-semibold text-ink-900 hover:text-azure-500 transition-colors duration-150 block break-words leading-tight"
-                          >
-                            {row.value}
-                          </a>
-                        ) : (
-                          <div className="text-[22px] font-semibold text-ink-900 leading-tight">
-                            {row.value}
-                          </div>
-                        )}
-                        {row.sub && <div className="text-[15px] text-ink-400 mt-1">{row.sub}</div>}
+      {/* Contact details and licences in one compact column beside the form;
+          stacked above it on phones. */}
+      <section id="project-inquiry" className="scroll-mt-24 bg-mist-50 py-16 lg:py-20">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
+            <AnimateIn className="lg:col-span-4">
+              <ul className="space-y-5">
+                {rows.map((row) => (
+                  <li key={row.label} className="flex items-center gap-4">
+                    {row.silhouette ? (
+                      // Licences: no box, just the state outline.
+                      <div className="w-12 flex items-center justify-center shrink-0">
+                        <Image
+                          src={row.silhouette.src}
+                          alt=""
+                          width={row.silhouette.width}
+                          height={row.silhouette.height}
+                          className="w-10 h-10 object-contain"
+                        />
                       </div>
+                    ) : (
+                      // Phone, email, location: icon in the white square.
+                      <div className="w-12 h-12 rounded bg-white border border-mist-300 flex items-center justify-center shrink-0">
+                        <row.icon className="w-5 h-5 text-azure-500" />
+                      </div>
+                    )}
+                    <div className="min-w-0">
+                      <div className="text-[10.5px] font-bold tracking-[0.18em] text-ink-400 uppercase mb-0.5">
+                        {row.label}
+                      </div>
+                      {row.href ? (
+                        <a
+                          href={row.href}
+                          className="text-[15px] font-semibold text-ink-900 hover:text-azure-500 transition-colors duration-150 block break-words leading-snug"
+                        >
+                          {row.value}
+                        </a>
+                      ) : (
+                        <div className="text-[15px] font-semibold text-ink-900 leading-snug">{row.value}</div>
+                      )}
+                      {row.sub && <div className="text-[13px] text-ink-400">{row.sub}</div>}
                     </div>
-                  ))}
-                </div>
-              ))}
-            </div>
+                  </li>
+                ))}
+              </ul>
 
-            <p className="mt-12 pt-8 border-t border-mist-200 text-[16px] text-ink-500 leading-relaxed max-w-3xl">
-              Whether you&apos;re addressing an immediate facility need or planning an upcoming
-              improvement, we&apos;re ready to discuss the project and determine the best path
-              forward.
-            </p>
-          </AnimateIn>
-        </div>
-      </section>
+              <p className="mt-8 pt-6 border-t border-mist-200 text-[14px] text-ink-500 leading-relaxed">
+                Whether you&apos;re addressing an immediate facility need or planning an upcoming
+                improvement, we&apos;re ready to discuss the project and determine the best path
+                forward.
+              </p>
+            </AnimateIn>
 
-      {/* ── Project inquiry ── */}
-      <section id="project-inquiry" className="scroll-mt-24 bg-mist-100 py-20 lg:py-24 border-t border-mist-200">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
-          <AnimateIn>
-            <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight mb-3">
-              Project Information
-            </h2>
-            <p className="text-[15px] text-ink-500 leading-relaxed mb-10">
-              Tell us where the facility is, what needs to be done, and when you need it. A photo or
-              drawing helps if you have one.
-            </p>
-            <ContactForm />
-          </AnimateIn>
+            <AnimateIn delay={100} className="lg:col-span-8">
+              <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight mb-2">
+                Project Information
+              </h2>
+              <p className="text-[15px] text-ink-500 leading-relaxed mb-8">
+                Tell us where the facility is, what needs to be done, and when you need it. A photo
+                or drawing helps if you have one.
+              </p>
+              <ContactForm />
+            </AnimateIn>
+          </div>
         </div>
       </section>
     </div>

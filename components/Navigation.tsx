@@ -75,7 +75,7 @@ export default function Navigation() {
               href="/contact"
               className="ml-3 px-4 py-2 bg-azure-500 hover:bg-azure-600 text-white font-semibold text-[13px] rounded transition-colors duration-150"
             >
-              Request a Quote
+              Discuss Your Project
             </Link>
           </div>
 
@@ -157,7 +157,7 @@ export default function Navigation() {
                   href="/contact"
                   className="block w-full text-center px-4 py-3 bg-azure-500 hover:bg-azure-600 text-white font-semibold text-[14px] rounded transition-colors duration-150"
                 >
-                  Request a Quote
+                  Discuss Your Project
                 </Link>
                 <p className="text-center text-[10px] text-chrome-500 tracking-[0.18em] uppercase pt-1">
                   Plan · Manage · Deliver

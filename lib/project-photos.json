@@ -1,0 +1,384 @@
+{
+  "tank-farm": [
+    {
+      "src": "/projects/tank-farm/01-after.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "After",
+      "source": "Tank Farm Platform After.jpg"
+    },
+    {
+      "src": "/projects/tank-farm/02-before.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Before",
+      "source": "Tank Farm Platform Before.jpg"
+    },
+    {
+      "src": "/projects/tank-farm/03-before.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Before",
+      "source": "Tank Farm Platform Before (2).jpg"
+    },
+    {
+      "src": "/projects/tank-farm/04-after.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "After",
+      "source": "Tank Farm Platform After (3).jpg"
+    },
+    {
+      "src": "/projects/tank-farm/05-after.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "After",
+      "source": "Tank Farm Platform After (2).jpg"
+    },
+    {
+      "src": "/projects/tank-farm/06-tank-cleaning-before.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "Tank cleaning: Before",
+      "source": "Tank Farm Pressure Wash Before.jpg"
+    },
+    {
+      "src": "/projects/tank-farm/07-tank-cleaning-after.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "Tank cleaning: After",
+      "source": "Tank Farm Pressure Wash After.heic"
+    }
+  ],
+  "production-area-renovation": [
+    {
+      "src": "/projects/production-area-renovation/01-after.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "After",
+      "source": "Inkjet Remodel After.jpg"
+    },
+    {
+      "src": "/projects/production-area-renovation/02-before.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Before",
+      "source": "Inkjet Remodel Before.jpg"
+    },
+    {
+      "src": "/projects/production-area-renovation/03-during.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "During",
+      "source": "Inkjet Remodel During.jpg"
+    },
+    {
+      "src": "/projects/production-area-renovation/04-during.jpg",
+      "width": 2000,
+      "height": 1126,
+      "stage": "During",
+      "source": "Inkjet Remodel During (1).jpg"
+    },
+    {
+      "src": "/projects/production-area-renovation/05-during.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "During",
+      "source": "Inkjet Remodel During (2).jpg"
+    },
+    {
+      "src": "/projects/production-area-renovation/06-after.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "After",
+      "source": "Inkjet Remodel After (1).jpg"
+    }
+  ],
+  "laboratory-interior-renovation": [
+    {
+      "src": "/projects/laboratory-interior-renovation/01-after.jpg",
+      "width": 2000,
+      "height": 1126,
+      "stage": "After",
+      "source": "Lab Remodel After (2).jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/02-before.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "Before",
+      "source": "Lab Remodel Before.jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/03-before.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "Before",
+      "source": "Lab Remodel Before (1).jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/04-during.jpg",
+      "width": 2000,
+      "height": 1126,
+      "stage": "During",
+      "source": "Lab Remodel During.jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/05-during.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "During",
+      "source": "Lab Remodel During (1).jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/06-after.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "After",
+      "source": "Lab Remodel After.jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/07-after.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "After",
+      "source": "Lab Remodel After (1).jpg"
+    },
+    {
+      "src": "/projects/laboratory-interior-renovation/08-after.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "After",
+      "source": "Lab Remodel After (3).jpg"
+    }
+  ],
+  "laboratory-ceiling-lighting": [
+    {
+      "src": "/projects/laboratory-ceiling-lighting/01-finished.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "Finished",
+      "source": "Lab Drop Ceiling Finished (2).jpg"
+    },
+    {
+      "src": "/projects/laboratory-ceiling-lighting/02-before.jpg",
+      "width": 2000,
+      "height": 1126,
+      "stage": "Before",
+      "source": "Lab Drop Ceiling Before.jpg"
+    },
+    {
+      "src": "/projects/laboratory-ceiling-lighting/03-before.jpg",
+      "width": 2000,
+      "height": 1126,
+      "stage": "Before",
+      "source": "Lab Drop Ceiling Before (1).jpg"
+    },
+    {
+      "src": "/projects/laboratory-ceiling-lighting/04-finished.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "Finished",
+      "source": "Lab Drop Ceiling Finished (1).jpg"
+    },
+    {
+      "src": "/projects/laboratory-ceiling-lighting/05-finished.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Finished",
+      "source": "Lab Drop Ceiling Finished.jpg"
+    }
+  ],
+  "operations-meeting-room": [
+    {
+      "src": "/projects/operations-meeting-room/01-finished.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Finished",
+      "source": "War Room Front To Back Finished.jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/02-before.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Before",
+      "source": "War Room Renovation Before.jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/03-before.jpg",
+      "width": 1448,
+      "height": 1086,
+      "stage": "Before",
+      "source": "War Room Before  (2).png"
+    },
+    {
+      "src": "/projects/operations-meeting-room/04-before.jpg",
+      "width": 1086,
+      "height": 1448,
+      "stage": "Before",
+      "source": "War Room Before.png"
+    },
+    {
+      "src": "/projects/operations-meeting-room/05-before.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "Before",
+      "source": "War Room Renovation Before (4).jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/06-during.jpg",
+      "width": 1086,
+      "height": 1448,
+      "stage": "During",
+      "source": "Renovated Industrial Doorway Opening( War Room).png"
+    },
+    {
+      "src": "/projects/operations-meeting-room/07-during.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "During",
+      "source": "War Room During (2).jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/08-during.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "During",
+      "source": "War Room During (3).jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/09-during.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "During",
+      "source": "Doors and Wall During (War Room).jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/10-during.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "During",
+      "source": "War Room Front To Back During.jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/11-finished.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Finished",
+      "source": "Doors and Walls After (War Room).jpg"
+    },
+    {
+      "src": "/projects/operations-meeting-room/12-finished.jpg",
+      "width": 2000,
+      "height": 1500,
+      "stage": "Finished",
+      "source": "Bricked in old doorway shot (War Room).jpg"
+    }
+  ],
+  "exhaust-fan-installation": [
+    {
+      "src": "/projects/exhaust-fan-installation/01-after.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "After",
+      "source": "Exhaust Fan Install After.jpg"
+    },
+    {
+      "src": "/projects/exhaust-fan-installation/02-before.jpg",
+      "width": 2000,
+      "height": 1506,
+      "stage": "Before",
+      "source": "Exhaust Fan Install Before.jpg"
+    },
+    {
+      "src": "/projects/exhaust-fan-installation/03-after.jpg",
+      "width": 1500,
+      "height": 2000,
+      "stage": "After",
+      "source": "Exhaust Fan Install After (2).jpg"
+    }
+  ],
+  "platform-painting": [
+    {
+      "src": "/projects/platform-painting/01-completed.jpg",
+      "width": 2000,
+      "height": 1125,
+      "stage": "Completed",
+      "source": "Painting Project (2).jpg"
+    },
+    {
+      "src": "/projects/platform-painting/02-completed.jpg",
+      "width": 1125,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Painting Project.jpg"
+    }
+  ],
+  "restroom-renovation": [
+    {
+      "src": "/projects/restroom-renovation/01-completed.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Bathroom Remodel (1).jpg"
+    },
+    {
+      "src": "/projects/restroom-renovation/02-completed.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Bathroom Remodel.jpg"
+    },
+    {
+      "src": "/projects/restroom-renovation/03-completed.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Bathroom Remodel (6).jpg"
+    },
+    {
+      "src": "/projects/restroom-renovation/04-completed.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Bathroom Remodel (3).jpg"
+    },
+    {
+      "src": "/projects/restroom-renovation/05-completed.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Bathroom Remodel (4).jpg"
+    },
+    {
+      "src": "/projects/restroom-renovation/06-completed.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "Completed",
+      "source": "Bathroom Remodel (5).jpg"
+    }
+  ],
+  "kitchenette-renovation": [
+    {
+      "src": "/projects/kitchenette-renovation/01-after.jpg",
+      "width": 1126,
+      "height": 2000,
+      "stage": "After",
+      "source": "Kitchenette Remodel.jpg"
+    },
+    {
+      "src": "/projects/kitchenette-renovation/02-before.jpg",
+      "width": 1506,
+      "height": 2000,
+      "stage": "Before",
+      "source": "Kitchenette Before.jpg"
+    },
+    {
+      "src": "/projects/kitchenette-renovation/03-design-rendering.jpg",
+      "width": 1214,
+      "height": 854,
+      "stage": "Design Rendering",
+      "source": "Kitchenette Rendering.png"
+    }
+  ]
+}

@@ -4,125 +4,100 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 import { PageHero } from "@/components/page-hero";
+import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Solutions Contracting Group is a licensed general contractor providing renovation, facility improvement, and project management services for industrial facilities in North and South Carolina.",
+    "Solutions Contracting Group is a licensed general contractor serving industrial facilities across North and South Carolina: production-area and laboratory renovations, tank farm access upgrades, ventilation installations, and support-space renovations.",
 };
-
-const considerations = [
-  "Production schedules",
-  "Facility operations",
-  "Employees",
-  "Equipment",
-  "Access",
-  "Safety requirements",
-  "Subcontractors",
-  "Deadlines",
-];
 
 const approach = [
   {
     key: "Plan",
-    body: "Every successful project starts with a clear understanding of the objective. We evaluate the project requirements, help establish the scope, identify the resources needed, and develop a practical path forward.",
+    body: "Define the project scope, identify the required construction resources, and establish the work sequence.",
   },
   {
     key: "Manage",
-    body: "Once the plan is established, we coordinate the people, materials, subcontractors, schedules, and site activities necessary to execute the work.",
+    body: "Coordinate subcontractors, schedules, materials, and site activities while keeping the customer informed.",
   },
   {
     key: "Deliver",
-    body: "We manage the project through completion while maintaining communication, quality, organization, and accountability.",
+    body: "Oversee completion, address remaining project items, and coordinate turnover to the customer.",
   },
 ];
 
 export default function AboutPage() {
+  const painting = projects.find((p) => p.slug === "platform-painting")!;
+
   return (
     <div>
       <PageHero
         eyebrow="About"
-        title="Built Around the Project."
-        image="/portfolio/5-star/IMG-20251007-WA0014.jpg"
+        title="Focused on Industrial Facility Projects"
+        image={painting.featured.src}
       >
         <p>
-          Solutions Contracting Group is a licensed general contractor providing general
-          contracting, renovation, facility improvement, and project management services for
-          industrial facilities.
+          Solutions Contracting Group is a licensed general contractor serving industrial
+          facilities across North and South Carolina.
         </p>
       </PageHero>
 
-      {/* ── Not in a vacuum ── */}
+      {/* ── Recent work and how we're engaged ── */}
       <section className="bg-mist-50 py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <AnimateIn className="lg:col-span-7 space-y-5">
-              <p className="text-[16px] text-ink-700 leading-relaxed">
-                We understand that industrial projects aren&apos;t completed in a vacuum.
-              </p>
-              <p className="text-[15px] text-ink-500 leading-relaxed">
-                That&apos;s why our approach begins with understanding the facility and the
-                objective — not simply the individual task.
-              </p>
-              <p className="text-[15px] text-ink-500 leading-relaxed">
-                We work with customers to define the scope, establish a practical plan, coordinate
-                the appropriate resources, and manage the project through completion.
-              </p>
-            </AnimateIn>
-
-            <AnimateIn delay={90} className="lg:col-span-5">
-              <h2 className="text-[10px] font-bold tracking-[0.2em] text-ink-400 uppercase mb-5">
-                All of it has to be considered
-              </h2>
-              <div className="flex flex-wrap gap-2">
-                {considerations.map((item) => (
-                  <span
-                    key={item}
-                    className="px-3.5 py-2 text-[13px] font-medium text-ink-700 bg-white border border-mist-300 rounded"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </AnimateIn>
-          </div>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <AnimateIn className="space-y-5">
+            <p className="text-[17px] text-ink-700 leading-relaxed">
+              Our recent work includes production-area renovations, laboratory improvements, tank
+              farm access upgrades, industrial ventilation installations, and the renovation of
+              facility meeting rooms, restrooms, and kitchenettes.
+            </p>
+            <p className="text-[17px] text-ink-500 leading-relaxed">
+              We manage the overall construction project and coordinate the qualified subcontractors
+              required for each scope. Customers work through one point of contact for planning,
+              scheduling, site coordination, and project communication.
+            </p>
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-1.5 pt-2 text-[14px] font-semibold text-azure-500 hover:text-azure-600 transition-colors duration-150"
+            >
+              See the projects <ArrowRight className="w-4 h-4" />
+            </Link>
+          </AnimateIn>
         </div>
       </section>
 
-      {/* ── A better way ── */}
+      {/* ── Planning around the facility ── */}
       <section className="bg-steel-900 steel-grain py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <AnimateIn className="lg:col-span-5">
               <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 leading-[1.2] tracking-tight">
-                A better way to manage facility projects.
+                Planning Around the Facility
               </h2>
             </AnimateIn>
             <AnimateIn delay={90} className="lg:col-span-7 space-y-5">
-              <p className="text-[15px] text-chrome-400 leading-relaxed">
-                Managing multiple contractors, schedules, proposals, materials, and scopes can
-                consume valuable time for facility and operations teams.
-              </p>
-              <p className="text-[15px] text-chrome-400 leading-relaxed">
-                Solutions Contracting Group provides a single point of contact to help simplify that
-                process. We coordinate the project, communicate with subcontractors, track progress,
-                manage schedules, and keep the customer informed throughout the work.
+              <p className="text-[15px] text-chrome-300 leading-relaxed">
+                Industrial construction requires consideration of the facility as well as the work
+                itself.
               </p>
               <p className="text-[15px] text-chrome-200 leading-relaxed border-l-2 border-azure-500 pl-5">
-                Our goal is straightforward: make it easier for our customers to get facility
-                projects completed.
+                We work with customers to understand project boundaries, access requirements,
+                production schedules, nearby equipment, and applicable site requirements before
+                coordinating the construction sequence.
               </p>
             </AnimateIn>
           </div>
         </div>
       </section>
 
-      {/* ── Our Approach ── */}
+      {/* ── Plan · Manage · Deliver ── */}
       <section className="bg-mist-100 py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimateIn className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight">
-              Our Approach
+              Plan <span className="text-azure-500">·</span> Manage{" "}
+              <span className="text-azure-500">·</span> Deliver
             </h2>
           </AnimateIn>
 

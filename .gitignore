@@ -48,3 +48,6 @@ next-env.d.ts
 
 # logo/card source art (originals; processed copies live in public/brand)
 /brand-source/
+
+# raw project photos as supplied; web-sized copies live in public/projects
+/Website Pictures/

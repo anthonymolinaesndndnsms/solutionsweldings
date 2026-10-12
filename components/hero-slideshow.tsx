@@ -3,19 +3,18 @@
 import { useEffect, useState } from "react";
 
 /**
- * Project photos behind the home hero, ordered to show range: heavy
- * industrial, process equipment, structural work, then finished interiors.
+ * Finished-project photos behind the home hero, as the customer specified:
+ * the tank farm platform first, then the production area and the lab ceiling.
+ * Before and during photos stay on the project pages.
  *
  * These are pre-cropped to 16:9 and capped at 2200px in public/hero. The
- * originals are 12-megapixel camera files — compositing one of those while
+ * originals are 12-megapixel camera files, and compositing one of those while
  * it animates is what makes the drift stutter.
  */
 const SLIDES = [
-  "/hero/hero-1.jpg",
-  "/hero/hero-2.jpg",
-  "/hero/hero-3.jpg",
-  "/hero/hero-4.jpg",
-  "/hero/hero-5.jpg",
+  "/hero/home-tank-farm.jpg",
+  "/hero/home-production-area.jpg",
+  "/hero/home-lab-ceiling.jpg",
 ];
 
 const INTERVAL_MS = 6500;
@@ -69,19 +68,19 @@ export function HeroSlideshow() {
 
       {/* Shade cover — a flat scrim plus two gradients so the headline keeps
           its contrast wherever a photo runs light. */}
-      <div className="absolute inset-0 bg-steel-950/45" />
+      <div className="absolute inset-0 bg-steel-950/25" />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(100deg, rgba(11,14,18,0.90) 0%, rgba(11,14,18,0.58) 50%, rgba(11,14,18,0.22) 100%)",
+            "linear-gradient(100deg, rgba(11,14,18,0.92) 0%, rgba(11,14,18,0.62) 45%, rgba(11,14,18,0.08) 100%)",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(11,14,18,0.72) 0%, rgba(11,14,18,0.14) 38%, rgba(11,14,18,0.78) 100%)",
+            "linear-gradient(180deg, rgba(11,14,18,0.60) 0%, rgba(11,14,18,0.05) 38%, rgba(11,14,18,0.65) 100%)",
         }}
       />
     </div>

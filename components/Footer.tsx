@@ -14,10 +14,11 @@ const siteLinks = [
 ];
 
 const serviceLinks = [
-  "Industrial Renovations",
-  "Facility Improvements",
-  "Project & Site Management",
-  "Multi-Trade Coordination",
+  ["Production-Area Renovations", "/services#production-area-renovations"],
+  ["Laboratory Renovations", "/services#laboratory-renovations"],
+  ["Infrastructure & Access", "/services#infrastructure-access"],
+  ["Support-Space Renovations", "/services#support-space-renovations"],
+  ["Construction Management", "/services#construction-management"],
 ];
 
 export default function Footer() {
@@ -52,10 +53,10 @@ export default function Footer() {
               What We Do
             </h4>
             <ul className="space-y-3">
-              {serviceLinks.map((label) => (
+              {serviceLinks.map(([label, href]) => (
                 <li key={label}>
                   <Link
-                    href="/services"
+                    href={href}
                     className="text-[13px] text-chrome-500 hover:text-chrome-200 transition-colors duration-150"
                   >
                     {label}

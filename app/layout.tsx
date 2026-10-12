@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 const description =
-  "SCG Solutions Contracting Group provides general contracting, renovation, facility improvement, and project management services for industrial facilities across North and South Carolina.";
+  "Solutions Contracting Group manages renovations and improvement projects within industrial facilities across North and South Carolina: production-area and laboratory renovations, tank farm access upgrades, and facility support-space renovations.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://solutionscontractinggroup.com"),
@@ -26,7 +26,9 @@ export const metadata: Metadata = {
     "facility improvements",
     "industrial renovations",
     "project management",
-    "multi-trade coordination",
+    "laboratory renovations",
+    "tank farm access",
+    "production area renovation",
     "North Carolina",
     "South Carolina",
   ],
@@ -66,7 +68,7 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} data-scroll-behavior="smooth">
       <body className="bg-mist-50 text-ink-700 antialiased">
         <script
           type="application/ld+json"

@@ -3,11 +3,13 @@ import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 import { PageHero } from "@/components/page-hero";
+import { ContactForm } from "@/components/contact-form";
+import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Tell us about your renovation, facility improvement, or general contracting project. Solutions Contracting Group is a licensed general contractor serving industrial customers across North and South Carolina.",
+    "Discuss your production-area renovation, laboratory improvement, tank farm access upgrade, or other industrial facility project with Solutions Contracting Group, serving North and South Carolina.",
 };
 
 type Row = {
@@ -25,7 +27,7 @@ type Row = {
 // business card.
 const rows: Row[] = [
   { icon: Phone, label: "Phone", value: "(980) 339-0527", sub: "Mon–Fri, 7am–6pm", href: "tel:9803390527" },
-  { icon: Mail, label: "Email", value: "info@solutionswelding.com", sub: "We reply within one business day", href: "mailto:info@solutionswelding.com" },
+  { icon: Mail, label: "Email", value: "info@solutionswelding.com", sub: "", href: "mailto:info@solutionswelding.com" },
   { icon: MapPin, label: "Based In", value: "Fort Mill, SC", sub: "Serving North & South Carolina", href: null },
   {
     label: "North Carolina",
@@ -44,20 +46,26 @@ const rows: Row[] = [
 ];
 
 export default function ContactPage() {
+  const meetingRoom = projects.find((p) => p.slug === "operations-meeting-room")!;
+
   return (
     <div>
       <PageHero
         eyebrow="Contact"
-        title={"Let’s Talk About Your Project"}
-        image="/portfolio/5-star/IMG-20251007-WA0018.jpg"
+        title="Discuss Your Industrial Project"
+        image={meetingRoom.featured.src}
       >
         <p>
-          Have a renovation, facility improvement, or general contracting project that needs to
-          move forward? Tell us what you&apos;re working on.
+          Planning a production-area renovation, laboratory improvement, tank farm access upgrade,
+          or another industrial facility project?
         </p>
         <p>
-          Solutions Contracting Group works with industrial customers to evaluate project needs,
-          develop scopes, coordinate qualified resources, and manage projects through completion.
+          Contact Solutions Contracting Group with your facility location, a brief description of
+          the work, and your anticipated schedule. We can discuss the project requirements and
+          determine the next step for scope development and pricing.
+        </p>
+        <p className="text-chrome-100 font-medium">
+          Serving industrial facilities across North and South Carolina.
         </p>
       </PageHero>
 
@@ -107,7 +115,7 @@ export default function ContactPage() {
                             {row.value}
                           </div>
                         )}
-                        <div className="text-[15px] text-ink-400 mt-1">{row.sub}</div>
+                        {row.sub && <div className="text-[15px] text-ink-400 mt-1">{row.sub}</div>}
                       </div>
                     </div>
                   ))}
@@ -120,6 +128,22 @@ export default function ContactPage() {
               improvement, we&apos;re ready to discuss the project and determine the best path
               forward.
             </p>
+          </AnimateIn>
+        </div>
+      </section>
+
+      {/* ── Project inquiry ── */}
+      <section id="project-inquiry" className="scroll-mt-24 bg-mist-100 py-20 lg:py-24 border-t border-mist-200">
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <AnimateIn>
+            <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight mb-3">
+              Project Information
+            </h2>
+            <p className="text-[15px] text-ink-500 leading-relaxed mb-10">
+              Tell us where the facility is, what needs to be done, and when you need it. A photo or
+              drawing helps if you have one.
+            </p>
+            <ContactForm />
           </AnimateIn>
         </div>
       </section>

@@ -1,61 +1,75 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 import { PageHero } from "@/components/page-hero";
+import { projects, projectHref } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Industrial General Contracting Services",
   description:
-    "General contracting, industrial renovations, facility improvements, project and site management, and multi-trade coordination for industrial facilities.",
+    "Production-area renovations, laboratory improvements, facility infrastructure and access upgrades, and support-space renovations for industrial facilities across North and South Carolina.",
 };
 
-const serviceBlocks = [
+const project = (slug: string) => projects.find((p) => p.slug === slug)!;
+
+type Service = {
+  id: string;
+  title: string;
+  body: React.ReactNode[];
+  /** Project whose finished photo illustrates this service. */
+  example: string;
+};
+
+const services: Service[] = [
   {
-    title: "Industrial Renovations",
-    paragraphs: [
-      "Existing facilities often require modifications and improvements to accommodate changing operational needs.",
-      "Solutions Contracting Group manages industrial renovation projects from initial planning through completion, coordinating the work required to update, repair, modify, or improve existing spaces.",
-      "Our focus is on delivering practical solutions while working within the demands of active industrial environments.",
+    id: "production-area-renovations",
+    title: "Production-Area Renovations",
+    body: [
+      "We manage renovations to existing industrial workspaces, bringing together the construction scopes needed to modify and improve the area.",
+      "Depending on the project, work may include demolition, partitions and framing, wall finishes, doors and openings, flooring, painting, and coordination of electrical and other specialty work.",
+      <>
+        Our recent production-area renovation work is documented in the{" "}
+        <Link
+          href={projectHref("production-area-renovation")}
+          className="font-semibold text-azure-500 hover:text-azure-600 underline underline-offset-2"
+        >
+          Inkjet project gallery
+        </Link>
+        .
+      </>,
     ],
+    example: "production-area-renovation",
   },
   {
-    title: "Facility Improvements",
-    paragraphs: [
-      "We help industrial customers maintain and improve their facilities through planned upgrades, repairs, modifications, and improvement projects.",
-      "Projects may range from individual facility improvements to larger projects involving multiple scopes and subcontractors.",
-      "We work with customers to understand the need, develop the appropriate scope, coordinate the work, and manage the project through completion.",
+    id: "laboratory-renovations",
+    title: "Laboratory Renovations & Improvements",
+    body: [
+      "We coordinate renovations within laboratory environments, including interior space modifications, partitions, observation windows, doors, flooring, suspended ceilings, and lighting coordination.",
+      "Our laboratory project photographs show both room renovation work and the installation of a finished suspended ceiling within an existing laboratory.",
     ],
+    example: "laboratory-interior-renovation",
   },
-];
-
-const managementServices = [
-  "Project planning and scope development",
-  "Scheduling and coordination",
-  "Budget and cost management",
-  "Procurement coordination",
-  "Subcontractor coordination",
-  "Site coordination",
-  "Progress tracking",
-  "Customer communication",
-  "Quality oversight",
-  "Project closeout",
-];
-
-const capabilities = [
-  "Industrial facility renovations",
-  "Facility repairs and modifications",
-  "Flooring and interior finishes",
-  "Epoxy flooring and coatings",
-  "LVP and tile",
-  "Cabinetry installation",
-  "Carpentry",
-  "Framing",
-  "Interior improvements",
-  "Electrical coordination",
-  "Plumbing coordination",
-  "Specialty subcontractor coordination",
-  "General facility improvements",
+  {
+    id: "infrastructure-access",
+    title: "Facility Infrastructure & Access Improvements",
+    body: [
+      "We manage improvements to existing facility infrastructure and access areas.",
+      "Relevant projects include tank farm platform and stair improvements, industrial exhaust fan installations, and painting of industrial platforms and associated surfaces.",
+      "Specialty scopes are coordinated with qualified subcontractors appropriate to the work.",
+    ],
+    example: "tank-farm",
+  },
+  {
+    id: "support-space-renovations",
+    title: "Facility Support-Space Renovations",
+    body: [
+      "We renovate the spaces that support employees and facility operations, including operations meeting rooms, restrooms, and kitchenettes.",
+      "These projects can involve multiple construction scopes, including interior modifications, finishes, cabinetry, flooring, ceilings, and coordinated electrical or plumbing work.",
+    ],
+    example: "operations-meeting-room",
+  },
 ];
 
 export default function ServicesPage() {
@@ -64,142 +78,86 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Industrial General Contracting Services"
-        image="/portfolio/5-star/20240920_092409.jpg"
+        image={project("production-area-renovation").sequence[1].src}
       >
         <p>
-          Solutions Contracting Group provides comprehensive general contracting, renovation,
-          facility improvement, and project management services for industrial facilities.
+          Solutions Contracting Group manages construction, renovation, and facility improvement
+          projects for industrial customers across North and South Carolina.
         </p>
         <p>
-          Every facility and every project presents different challenges. Our job is to understand
-          the customer&apos;s objectives, establish a clear scope of work, coordinate the
-          appropriate resources, and manage the project through completion.
-        </p>
-        <p>
-          Whether the project involves a single improvement or multiple coordinated scopes, we
-          provide the organization and oversight necessary to keep the work moving.
+          We work with customers to define the project, establish the construction scopes,
+          coordinate qualified subcontractors, and manage the work through completion.
         </p>
       </PageHero>
 
-      {/* ── Renovations + Improvements ── */}
-      {serviceBlocks.map((block, i) => (
-        <section key={block.title} className={i % 2 === 0 ? "bg-mist-50 py-20" : "bg-mist-100 py-20"}>
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-              <AnimateIn className="lg:col-span-4">
-                <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight">
-                  {block.title}
-                </h2>
-              </AnimateIn>
-              <AnimateIn delay={90} className="lg:col-span-8 space-y-4">
-                {block.paragraphs.map((p) => (
-                  <p key={p} className="text-[15px] text-ink-500 leading-relaxed">
-                    {p}
-                  </p>
-                ))}
-              </AnimateIn>
-            </div>
-          </div>
-        </section>
-      ))}
+      {services.map((service, i) => {
+        const example = project(service.example);
+        return (
+          <section
+            key={service.id}
+            id={service.id}
+            className={`scroll-mt-24 py-20 ${i % 2 === 0 ? "bg-mist-50" : "bg-mist-100"}`}
+          >
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+                <AnimateIn className="lg:col-span-6 space-y-4">
+                  <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight mb-2">
+                    {service.title}
+                  </h2>
+                  {service.body.map((p, j) => (
+                    <p key={j} className="text-[15px] text-ink-500 leading-relaxed">
+                      {p}
+                    </p>
+                  ))}
+                </AnimateIn>
 
-      {/* ── Project & Site Management ── */}
-      <section className="bg-steel-900 steel-grain py-20">
+                <AnimateIn delay={90} className="lg:col-span-6">
+                  <Link href={projectHref(example.slug)} className="group block">
+                    <div className="relative aspect-[16/10] rounded-lg overflow-hidden bg-steel-800">
+                      <Image
+                        src={example.featured.src}
+                        alt={`${example.title}, completed`}
+                        fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
+                    </div>
+                    <p className="mt-3 flex items-center gap-1.5 text-[13px] font-semibold text-ink-700 group-hover:text-azure-500 transition-colors duration-150">
+                      {example.title} <ArrowRight className="w-3.5 h-3.5" />
+                    </p>
+                  </Link>
+                </AnimateIn>
+              </div>
+            </div>
+          </section>
+        );
+      })}
+
+      {/* ── Project Planning & Construction Management ── */}
+      <section id="construction-management" className="scroll-mt-24 bg-steel-900 steel-grain py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <AnimateIn className="lg:col-span-5">
-              <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 mb-6 tracking-tight">
-                Project &amp; Site Management
-              </h2>
-              <div className="space-y-4 text-[15px] text-chrome-400 leading-relaxed">
-                <p>
-                  Strong project management is the foundation of successful construction and facility
-                  improvement work.
-                </p>
-                <p>
-                  Solutions Contracting Group provides the planning, coordination, and oversight
-                  necessary to keep projects organized and progressing.
-                </p>
-                <p className="text-chrome-200">
-                  Our customers have one point of contact responsible for coordinating the project
-                  and keeping the various moving parts aligned.
-                </p>
-              </div>
-            </AnimateIn>
-
-            <AnimateIn delay={90} className="lg:col-span-7">
-              <h3 className="text-[10px] font-bold tracking-[0.2em] text-chrome-500 uppercase mb-5">
-                Services may include
-              </h3>
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
-                {managementServices.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 py-2.5 border-b border-steel-700"
-                  >
-                    <Check className="w-3.5 h-3.5 text-azure-400 shrink-0 mt-1" />
-                    <span className="text-[13.5px] text-chrome-300">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </AnimateIn>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Multi-Trade Coordination ── */}
-      <section className="bg-mist-50 py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
-            <AnimateIn className="lg:col-span-4">
-              <h2 className="text-2xl sm:text-3xl font-black text-ink-900 tracking-tight">
-                Multi-Trade Project Coordination
+              <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 tracking-tight">
+                Project Planning &amp; Construction Management
               </h2>
             </AnimateIn>
-            <AnimateIn delay={90} className="lg:col-span-8 space-y-4">
-              <p className="text-[15px] text-ink-500 leading-relaxed">
-                Industrial improvement projects frequently require several different trades working
-                together.
+            <AnimateIn delay={90} className="lg:col-span-7 space-y-4">
+              <p className="text-[15px] text-chrome-300 leading-relaxed">
+                Our role includes scope development, subcontractor coordination, scheduling,
+                procurement coordination, site oversight, progress communication, and project
+                closeout.
               </p>
-              <p className="text-[15px] text-ink-500 leading-relaxed">
-                Solutions Contracting Group manages the overall project and coordinates the qualified
-                subcontractors necessary to complete each scope of work.
+              <p className="text-[15px] text-chrome-300 leading-relaxed">
+                We work with the customer to establish access requirements, identify scheduling
+                constraints, and coordinate the sequence of work.
               </p>
-              <p className="text-[15px] text-ink-700 leading-relaxed bg-white border border-mist-200 rounded-lg p-5">
+              <p className="text-[15px] text-chrome-200 leading-relaxed border-l-2 border-azure-500 pl-5">
                 Electrical, plumbing, and other specialty work requiring separate trade licensing is
                 performed by appropriately licensed subcontractors.
               </p>
-              <p className="text-[15px] text-ink-500 leading-relaxed">
-                This approach allows our customers to work through one general contractor rather than
-                managing multiple contractors independently.
-              </p>
             </AnimateIn>
           </div>
-        </div>
-      </section>
-
-      {/* ── Capabilities ── */}
-      <section className="bg-mist-100 py-20 border-t border-mist-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <AnimateIn className="mb-10 max-w-2xl">
-            <h2 className="text-2xl sm:text-3xl font-black text-ink-900 mb-3 tracking-tight">
-              Capabilities
-            </h2>
-            <p className="text-[14px] text-ink-500 leading-relaxed">
-              Depending on the requirements of the project, scopes may include:
-            </p>
-          </AnimateIn>
-
-          <AnimateIn delay={80} className="flex flex-wrap gap-2.5">
-            {capabilities.map((item) => (
-              <span
-                key={item}
-                className="px-4 py-2 text-[13px] font-medium text-ink-700 bg-white border border-mist-300 rounded"
-              >
-                {item}
-              </span>
-            ))}
-          </AnimateIn>
         </div>
       </section>
 
@@ -208,10 +166,11 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <AnimateIn className="max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-black text-chrome-100 mb-4 tracking-tight">
-              Have a facility project that needs to get done?
+              Discuss Your Facility Project
             </h2>
             <p className="text-[15px] text-chrome-400 leading-relaxed mb-8">
-              Bring us the problem. We&apos;ll help develop the plan and coordinate the path forward.
+              Contact Solutions Contracting Group to discuss your project location, intended scope,
+              and schedule.
             </p>
             <Link
               href="/contact"

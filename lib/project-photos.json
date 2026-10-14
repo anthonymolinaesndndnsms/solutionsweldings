@@ -177,12 +177,6 @@
       "stage": "Finished"
     },
     {
-      "src": "/projects/operations-meeting-room/02-before.jpg",
-      "width": 2000,
-      "height": 1500,
-      "stage": "Before"
-    },
-    {
       "src": "/projects/operations-meeting-room/03-before.jpg",
       "width": 1448,
       "height": 1086,
@@ -201,15 +195,15 @@
       "stage": "Before"
     },
     {
-      "src": "/projects/operations-meeting-room/06-during.jpg",
-      "width": 1086,
-      "height": 1448,
-      "stage": "During"
-    },
-    {
       "src": "/projects/operations-meeting-room/07-during.jpg",
       "width": 1500,
       "height": 2000,
+      "stage": "During"
+    },
+    {
+      "src": "/projects/operations-meeting-room/06-during.jpg",
+      "width": 1086,
+      "height": 1448,
       "stage": "During"
     },
     {

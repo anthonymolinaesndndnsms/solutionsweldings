@@ -12,9 +12,11 @@ import { useEffect, useState } from "react";
  * it animates is what makes the drift stutter.
  */
 const SLIDES = [
-  "/hero/home-tank-farm.jpg",
-  "/hero/home-production-area.jpg",
-  "/hero/home-lab-ceiling.jpg",
+  // Full 4:3 frame, anchored a little low so the tanks, railings and stairs
+  // all stay in view at any hero shape.
+  { src: "/hero/home-tank-farm-finished.jpg", position: "center 60%" },
+  { src: "/hero/home-production-area.jpg", position: "center" },
+  { src: "/hero/home-lab-ceiling.jpg", position: "center" },
 ];
 
 const INTERVAL_MS = 6500;
@@ -28,7 +30,7 @@ export function HeroSlideshow() {
   // in, so the first second of its drift stutters. Warming them costs
   // nothing visible and the files are small.
   useEffect(() => {
-    SLIDES.slice(1).forEach((src) => {
+    SLIDES.slice(1).forEach(({ src }) => {
       const img = new Image();
       img.src = src;
       void img.decode?.().catch(() => {});
@@ -47,7 +49,7 @@ export function HeroSlideshow() {
 
   return (
     <div className="absolute inset-0 overflow-hidden" aria-hidden>
-      {SLIDES.map((src, i) => (
+      {SLIDES.map(({ src, position }, i) => (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           key={src}
@@ -60,6 +62,7 @@ export function HeroSlideshow() {
           decoding="async"
           className="hero-drift absolute inset-0 w-full h-full object-cover object-center"
           style={{
+            objectPosition: position,
             opacity: i === index ? 1 : 0,
             transition: `opacity ${FADE_MS}ms ease-in-out`,
           }}

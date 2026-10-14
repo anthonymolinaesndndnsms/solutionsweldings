@@ -29,16 +29,6 @@ const services: Service[] = [
     body: [
       "We manage renovations to existing industrial workspaces, bringing together the construction scopes needed to modify and improve the area.",
       "Depending on the project, work may include demolition, partitions and framing, wall finishes, doors and openings, flooring, painting, and coordination of electrical and other specialty work.",
-      <>
-        Our recent production-area renovation work is documented in our{" "}
-        <Link
-          href={projectHref("production-area-renovation")}
-          className="font-semibold text-azure-500 hover:text-azure-600 underline underline-offset-2"
-        >
-          project gallery
-        </Link>
-        .
-      </>,
     ],
     example: "production-area-renovation",
   },

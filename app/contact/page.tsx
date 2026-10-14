@@ -27,7 +27,7 @@ type Row = {
 // business card.
 const rows: Row[] = [
   { icon: Phone, label: "Phone", value: "(980) 339-0527", sub: "Mon–Fri, 7am–6pm", href: "tel:9803390527" },
-  { icon: Mail, label: "Email", value: "info@solutionswelding.com", sub: "", href: "mailto:info@solutionswelding.com" },
+  { icon: Mail, label: "Email", value: "shawn@solutionscontractinggroup.com", sub: "", href: "mailto:shawn@solutionscontractinggroup.com" },
   { icon: MapPin, label: "Based In", value: "Fort Mill, SC", sub: "Serving North & South Carolina", href: null },
   {
     label: "North Carolina",

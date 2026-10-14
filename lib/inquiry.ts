@@ -1,7 +1,7 @@
 // Shared between the contact form and /api/contact so both enforce the same
 // limits.
 
-export const CONTACT_EMAIL = "info@solutionswelding.com";
+export const CONTACT_EMAIL = "shawn@solutionscontractinggroup.com";
 export const CONTACT_PHONE = "(980) 339-0527";
 
 /** Stays under the 4.5 MB request limit for serverless functions. */

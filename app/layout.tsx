@@ -51,7 +51,7 @@ const organizationSchema = {
   name: "SCG Solutions Contracting Group",
   description,
   telephone: "+1-980-339-0527",
-  email: "info@solutionswelding.com",
+  email: "shawn@solutionscontractinggroup.com",
   slogan: "Plan · Manage · Deliver",
   address: {
     "@type": "PostalAddress",

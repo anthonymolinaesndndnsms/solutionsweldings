@@ -112,10 +112,10 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-azure-400 mt-0.5 shrink-0" />
                 <div>
                   <a
-                    href="mailto:info@solutionswelding.com"
+                    href="mailto:shawn@solutionscontractinggroup.com"
                     className="text-[13px] text-chrome-200 font-medium hover:text-azure-400 transition-colors duration-150 break-all"
                   >
-                    info@solutionswelding.com
+                    shawn@solutionscontractinggroup.com
                   </a>
                 </div>
               </li>

@@ -5,6 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Phone, Mail, MapPin } from "lucide-react";
 
+// Same state outlines and licence wording as the Contact page.
+const licenses = [
+  { state: "North Carolina", number: "L.108274", silhouette: "/brand/state-nc-blue.png", width: 144, height: 74 },
+  { state: "South Carolina", number: "CLG.127227.GC", silhouette: "/brand/state-sc-blue.png", width: 124, height: 97 },
+];
+
 const siteLinks = [
   ["Home", "/"],
   ["Services", "/services"],
@@ -131,9 +137,27 @@ export default function Footer() {
           <div className="text-[12px] text-chrome-500">
             © {new Date().getFullYear()} Solutions Contracting Group. All rights reserved.
           </div>
-          <div className="text-[11px] text-chrome-500">
-            Licensed General Contractor · SC CLG.127227.GC · NC L.108274
-          </div>
+          <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
+            {licenses.map((lic) => (
+              <li key={lic.state} className="flex items-center gap-3">
+                <Image
+                  src={lic.silhouette}
+                  alt=""
+                  width={lic.width}
+                  height={lic.height}
+                  className="w-8 h-8 object-contain shrink-0"
+                />
+                <div className="leading-tight">
+                  <div className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase">
+                    {lic.state}
+                  </div>
+                  <div className="text-[12px] text-chrome-300">
+                    General Contractor <span className="text-chrome-500">{lic.number}</span>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </footer>

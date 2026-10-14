@@ -16,7 +16,7 @@ const whatWeDo = [
   },
   {
     title: "Facility Support-Space Renovations",
-    body: "Renovations of offices, operations meeting rooms, employee break rooms and restrooms, coordinated as part of the customer’s overall facility improvement needs.",
+    body: "Renovations of offices, operations meeting rooms, employee break rooms, restrooms, and other support spaces within industrial facilities, coordinated to meet each customer’s operational requirements and overall facility improvement needs.",
   },
 ];
 

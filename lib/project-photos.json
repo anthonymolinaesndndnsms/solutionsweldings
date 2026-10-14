@@ -1,11 +1,11 @@
 {
   "tank-farm": [
     {
-      "src": "/projects/tank-farm/01-after.jpg",
-      "width": 2000,
-      "height": 1500,
+      "src": "/projects/tank-farm/01-after-finished.jpg",
+      "width": 1448,
+      "height": 1086,
       "stage": "After",
-      "source": "Tank Farm Platform After.jpg"
+      "source": "Tank Farm Platform Finished (edited from After 3).png"
     },
     {
       "src": "/projects/tank-farm/02-before.jpg",
@@ -22,28 +22,35 @@
       "source": "Tank Farm Platform Before (2).jpg"
     },
     {
-      "src": "/projects/tank-farm/04-after.jpg",
+      "src": "/projects/tank-farm/04-during.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "After",
-      "source": "Tank Farm Platform After (3).jpg"
+      "stage": "During",
+      "source": "Tank Farm Platform After.jpg"
     },
     {
-      "src": "/projects/tank-farm/05-after.jpg",
+      "src": "/projects/tank-farm/01-after-finished.jpg",
+      "width": 1448,
+      "height": 1086,
+      "stage": "After",
+      "source": "Tank Farm Platform Finished (edited from After 3).png"
+    },
+    {
+      "src": "/projects/tank-farm/06-after.jpg",
       "width": 2000,
       "height": 1500,
       "stage": "After",
       "source": "Tank Farm Platform After (2).jpg"
     },
     {
-      "src": "/projects/tank-farm/06-tank-cleaning-before.jpg",
+      "src": "/projects/tank-farm/07-tank-cleaning-before.jpg",
       "width": 1500,
       "height": 2000,
       "stage": "Tank cleaning: Before",
       "source": "Tank Farm Pressure Wash Before.jpg"
     },
     {
-      "src": "/projects/tank-farm/07-tank-cleaning-after.jpg",
+      "src": "/projects/tank-farm/08-tank-cleaning-after.jpg",
       "width": 1500,
       "height": 2000,
       "stage": "Tank cleaning: After",

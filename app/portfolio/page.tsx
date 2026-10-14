@@ -20,7 +20,7 @@ export default function PortfolioPage() {
       <PageHero
         eyebrow="Our Work"
         title="Industrial Projects & Facility Renovations"
-        image={tankFarm.sequence.find((p) => p.src.includes("05-"))!.src}
+        image={tankFarm.sequence.find((p) => p.src.endsWith("06-after.jpg"))!.src}
       >
         <p>
           Explore recent Solutions Contracting Group projects within industrial facilities,

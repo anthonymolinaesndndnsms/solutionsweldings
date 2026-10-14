@@ -128,12 +128,11 @@ export default function AboutPage() {
               alt="SCG Solutions Contracting Group"
               width={1453}
               height={966}
-              className="h-[130px] w-auto mb-10 opacity-95"
+              // The logo already carries "Plan · Manage · Deliver", so it is
+              // shown large enough to read rather than repeated as text.
+              className="h-auto w-full max-w-[340px] sm:max-w-[420px] mx-auto mb-10 opacity-95"
             />
-            <p className="text-[13px] font-black text-chrome-200 uppercase tracking-[0.32em] mb-5">
-              Plan · Manage · Deliver
-            </p>
-            <p className="text-[15px] text-chrome-400 max-w-md leading-relaxed mb-10">
+            <p className="text-[15px] text-chrome-400 max-w-md mx-auto leading-relaxed mb-10">
               It&apos;s more than a tagline. It&apos;s how we approach every project.
             </p>
             <Link

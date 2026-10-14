@@ -36,7 +36,7 @@ export default function Footer() {
   return (
     <footer className="bg-steel-950 steel-grain border-t border-steel-700">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className={`grid grid-cols-1 md:grid-cols-2 ${showContact ? "lg:grid-cols-4" : "lg:grid-cols-3"} gap-10 mb-12`}>
+        <div className={`grid grid-cols-1 md:grid-cols-2 ${showContact ? "lg:grid-cols-[1.2fr_1fr_0.7fr_1.5fr]" : "lg:grid-cols-3"} gap-10 mb-12`}>
           <div>
             <Image
               src="/brand/scg-lockup-nav.png"
@@ -113,7 +113,7 @@ export default function Footer() {
                 <div>
                   <a
                     href="mailto:shawn@solutionscontractinggroup.com"
-                    className="text-[13px] text-chrome-200 font-medium hover:text-azure-400 transition-colors duration-150 break-all"
+                    className="text-[12.5px] text-chrome-200 font-medium hover:text-azure-400 transition-colors duration-150 whitespace-nowrap"
                   >
                     shawn@solutionscontractinggroup.com
                   </a>

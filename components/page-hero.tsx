@@ -17,7 +17,7 @@ interface PageHeroProps {
  */
 export function PageHero({ eyebrow, title, image, children }: PageHeroProps) {
   return (
-    <section className="relative bg-steel-900 pt-[84px] overflow-hidden border-b border-steel-700">
+    <section className="relative bg-steel-900 pt-[100px] overflow-hidden border-b border-steel-700">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url('${image}')` }}

@@ -50,7 +50,7 @@ export default function PortfolioPage() {
         <section
           key={project.slug}
           id={project.slug}
-          className={`scroll-mt-24 py-16 lg:py-20 ${i % 2 === 0 ? "bg-mist-50" : "bg-white"}`}
+          className={`scroll-mt-28 py-16 lg:py-20 ${i % 2 === 0 ? "bg-mist-50" : "bg-white"}`}
         >
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <AnimateIn className="mb-8 max-w-3xl">

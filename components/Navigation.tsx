@@ -33,7 +33,7 @@ export default function Navigation() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-steel-900 steel-grain border-b border-steel-700">
-        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[84px] flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-6 lg:px-8 h-[100px] flex items-center justify-between">
           <Link href="/" className="flex items-center shrink-0" aria-label="SCG Solutions Contracting Group — home">
             <Image
               src="/brand/scg-lockup-nav.png"
@@ -41,7 +41,7 @@ export default function Navigation() {
               width={391}
               height={260}
               priority
-              className="h-[62px] w-auto"
+              className="h-[84px] w-auto"
             />
           </Link>
 
@@ -107,13 +107,13 @@ export default function Navigation() {
               transition={{ type: "tween", duration: 0.25 }}
               className="fixed top-0 right-0 bottom-0 z-[70] w-[290px] bg-steel-900 steel-grain border-l border-steel-700 flex flex-col"
             >
-              <div className="flex items-center justify-between px-5 h-[84px] border-b border-steel-700">
+              <div className="flex items-center justify-between px-5 h-[100px] border-b border-steel-700">
                 <Image
                   src="/brand/scg-lockup-nav.png"
                   alt="SCG Solutions Contracting Group"
                   width={391}
                   height={260}
-                  className="h-[40px] w-auto"
+                  className="h-[60px] w-auto"
                 />
                 <button
                   onClick={() => setMobileOpen(false)}

@@ -59,7 +59,7 @@ export default function HomePage() {
   return (
     <div>
       {/* ── Hero ── */}
-      <section className="relative bg-steel-900 pt-[84px] overflow-hidden">
+      <section className="relative bg-steel-900 pt-[100px] overflow-hidden">
         <HeroSlideshow />
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24 lg:py-32">

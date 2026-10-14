@@ -43,7 +43,7 @@ export default function Footer() {
               alt="SCG Solutions Contracting Group"
               width={391}
               height={260}
-              className="h-[62px] w-auto mb-5"
+              className="h-[84px] w-auto mb-5"
             />
             <p className="text-[13px] text-chrome-500 leading-relaxed max-w-xs mb-4">
               General contracting, renovation, facility improvement, and project

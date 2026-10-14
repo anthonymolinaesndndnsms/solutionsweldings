@@ -71,7 +71,7 @@ export default function ContactPage() {
 
       {/* Contact details and licences in one compact column beside the form;
           stacked above it on phones. */}
-      <section id="project-inquiry" className="scroll-mt-24 bg-mist-50 py-16 lg:py-20">
+      <section id="project-inquiry" className="scroll-mt-28 bg-mist-50 py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14">
             <AnimateIn className="lg:col-span-4">

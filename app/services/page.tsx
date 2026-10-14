@@ -96,7 +96,7 @@ export default function ServicesPage() {
           <section
             key={service.id}
             id={service.id}
-            className={`scroll-mt-24 py-20 ${i % 2 === 0 ? "bg-mist-50" : "bg-mist-100"}`}
+            className={`scroll-mt-28 py-20 ${i % 2 === 0 ? "bg-mist-50" : "bg-mist-100"}`}
           >
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -134,7 +134,7 @@ export default function ServicesPage() {
       })}
 
       {/* ── Project Planning & Construction Management ── */}
-      <section id="construction-management" className="scroll-mt-24 bg-steel-900 steel-grain py-20">
+      <section id="construction-management" className="scroll-mt-28 bg-steel-900 steel-grain py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
             <AnimateIn className="lg:col-span-5">

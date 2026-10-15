@@ -139,10 +139,10 @@
   ],
   "laboratory-ceiling-lighting": [
     {
-      "src": "/projects/laboratory-ceiling-lighting/01-finished.jpg",
+      "src": "/projects/laboratory-ceiling-lighting/01-during.jpg",
       "width": 2000,
       "height": 1506,
-      "stage": "Finished"
+      "stage": "During"
     },
     {
       "src": "/projects/laboratory-ceiling-lighting/02-before.jpg",
@@ -163,10 +163,10 @@
       "stage": "Finished"
     },
     {
-      "src": "/projects/laboratory-ceiling-lighting/05-finished.jpg",
+      "src": "/projects/laboratory-ceiling-lighting/05-during.jpg",
       "width": 1126,
       "height": 2000,
-      "stage": "Finished"
+      "stage": "During"
     }
   ],
   "operations-meeting-room": [

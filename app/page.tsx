@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 import { projects, projectHref } from "@/lib/projects";
+
+// Canonical URLs resolve against metadataBase (https://solutionscontractinggroup.com),
+// so any copy of the site served from another domain points search engines here.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const whatWeDo = [
   {

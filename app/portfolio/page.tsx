@@ -8,6 +8,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Our Work",
+  alternates: { canonical: "/portfolio" },
   description:
     "Recent industrial projects: tank farm access upgrades, production-area and laboratory renovations, and facility support-space renovations, shown from existing conditions through completion.",
 };

@@ -8,6 +8,7 @@ import { projects, projectHref } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Industrial General Contracting Services",
+  alternates: { canonical: "/services" },
   description:
     "Production-area renovations, laboratory improvements, facility infrastructure and access upgrades, and support-space renovations for industrial facilities across North and South Carolina.",
 };

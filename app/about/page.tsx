@@ -8,6 +8,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "About",
+  alternates: { canonical: "/about" },
   description:
     "Solutions Contracting Group is a licensed general contractor serving industrial facilities across North and South Carolina: production-area and laboratory renovations, tank farm access upgrades, ventilation installations, and support-space renovations.",
 };

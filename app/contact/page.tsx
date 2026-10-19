@@ -8,6 +8,7 @@ import { projects } from "@/lib/projects";
 
 export const metadata: Metadata = {
   title: "Contact",
+  alternates: { canonical: "/contact" },
   description:
     "Discuss your production-area renovation, laboratory improvement, tank farm access upgrade, or other industrial facility project with Solutions Contracting Group, serving North and South Carolina.",
 };

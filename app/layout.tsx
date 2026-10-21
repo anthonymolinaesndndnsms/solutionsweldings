@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
@@ -83,6 +84,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             (real-visitor page-load performance). Both only report on Vercel. */}
         <Analytics />
         <SpeedInsights />
+        {/* Google Analytics 4. Loaded after the page is interactive so it
+            doesn't delay first paint. */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LH7HY8YYM2"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LH7HY8YYM2');`}
+        </Script>
       </body>
     </html>
   );

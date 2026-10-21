@@ -6,7 +6,7 @@ import { AnimateIn } from "@/components/animate-in";
 import { HeroSlideshow } from "@/components/hero-slideshow";
 import { projects, projectHref } from "@/lib/projects";
 
-// Canonical URLs resolve against metadataBase (https://solutionscontractinggroup.com),
+// Canonical URLs resolve against metadataBase (SITE_URL in lib/site.ts),
 // so any copy of the site served from another domain points search engines here.
 export const metadata: Metadata = {
   alternates: { canonical: "/" },

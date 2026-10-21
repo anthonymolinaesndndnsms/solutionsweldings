@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ const description =
   "Solutions Contracting Group manages renovations and improvement projects within industrial facilities across North and South Carolina: production-area and laboratory renovations, tank farm access upgrades, and facility support-space renovations.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://solutionscontractinggroup.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "SCG Solutions Contracting Group | Industrial General Contracting",
     template: "%s | SCG Solutions Contracting Group",
@@ -47,6 +48,9 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "GeneralContractor",
   name: "SCG Solutions Contracting Group",
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon.png`,
+  image: `${SITE_URL}/brand/scg-share.png`,
   description,
   telephone: "+1-980-339-0527",
   email: "shawn@solutionscontractinggroup.com",

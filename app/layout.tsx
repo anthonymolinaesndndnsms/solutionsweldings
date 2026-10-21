@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -78,9 +79,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navigation />
         <main>{children}</main>
         <Footer />
-        {/* Vercel Web Analytics: page views only, no cookies. Collects once
-            Analytics is enabled for the project in the Vercel dashboard. */}
+        {/* Vercel Web Analytics (page views, no cookies) and Speed Insights
+            (real-visitor page-load performance). Both only report on Vercel. */}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

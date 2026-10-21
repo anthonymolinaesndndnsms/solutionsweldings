@@ -4,7 +4,7 @@
       "src": "/projects/tank-farm/01-after-final.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/tank-farm/02-before.jpg",
@@ -28,13 +28,13 @@
       "src": "/projects/tank-farm/01-after-final.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/tank-farm/06-after.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/tank-farm/07-tank-cleaning-before.jpg",
@@ -46,7 +46,7 @@
       "src": "/projects/tank-farm/08-tank-cleaning-after.jpg",
       "width": 1500,
       "height": 2000,
-      "stage": "Tank cleaning: After"
+      "stage": "Tank cleaning: Completed"
     }
   ],
   "production-area-renovation": [
@@ -54,19 +54,13 @@
       "src": "/projects/production-area-renovation/01-after.jpg",
       "width": 2000,
       "height": 1506,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/production-area-renovation/02-before.jpg",
       "width": 2000,
       "height": 1500,
       "stage": "Before"
-    },
-    {
-      "src": "/projects/production-area-renovation/03-during.jpg",
-      "width": 2000,
-      "height": 1500,
-      "stage": "During"
     },
     {
       "src": "/projects/production-area-renovation/04-during.jpg",
@@ -84,7 +78,7 @@
       "src": "/projects/production-area-renovation/06-after.jpg",
       "width": 2000,
       "height": 1506,
-      "stage": "After"
+      "stage": "Completed"
     }
   ],
   "laboratory-interior-renovation": [
@@ -92,7 +86,7 @@
       "src": "/projects/laboratory-interior-renovation/01-after.jpg",
       "width": 2000,
       "height": 1126,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/laboratory-interior-renovation/02-before.jpg",
@@ -122,19 +116,19 @@
       "src": "/projects/laboratory-interior-renovation/06-after.jpg",
       "width": 1126,
       "height": 2000,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/laboratory-interior-renovation/07-after.jpg",
       "width": 1126,
       "height": 2000,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/laboratory-interior-renovation/08-after.jpg",
       "width": 1126,
       "height": 2000,
-      "stage": "After"
+      "stage": "Completed"
     }
   ],
   "laboratory-ceiling-lighting": [
@@ -142,7 +136,7 @@
       "src": "/projects/laboratory-ceiling-lighting/01-finished.jpg",
       "width": 2000,
       "height": 1506,
-      "stage": "Finished"
+      "stage": "Completed"
     },
     {
       "src": "/projects/laboratory-ceiling-lighting/02-before-exposed-ceiling.jpg",
@@ -166,7 +160,7 @@
       "src": "/projects/laboratory-ceiling-lighting/05-finished-ceiling.jpg",
       "width": 2000,
       "height": 1506,
-      "stage": "Finished"
+      "stage": "Completed"
     }
   ],
   "operations-meeting-room": [
@@ -174,7 +168,7 @@
       "src": "/projects/operations-meeting-room/01-finished.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "Finished"
+      "stage": "Completed"
     },
     {
       "src": "/projects/operations-meeting-room/03-before.jpg",
@@ -228,13 +222,13 @@
       "src": "/projects/operations-meeting-room/11-finished.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "Finished"
+      "stage": "Completed"
     },
     {
       "src": "/projects/operations-meeting-room/12-finished.jpg",
       "width": 2000,
       "height": 1500,
-      "stage": "Finished"
+      "stage": "Completed"
     }
   ],
   "exhaust-fan-installation": [
@@ -242,7 +236,7 @@
       "src": "/projects/exhaust-fan-installation/01-after.jpg",
       "width": 1500,
       "height": 2000,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/exhaust-fan-installation/02-before.jpg",
@@ -254,7 +248,7 @@
       "src": "/projects/exhaust-fan-installation/03-after.jpg",
       "width": 1500,
       "height": 2000,
-      "stage": "After"
+      "stage": "Completed"
     }
   ],
   "platform-painting": [
@@ -314,7 +308,7 @@
       "src": "/projects/kitchenette-renovation/01-after.jpg",
       "width": 1126,
       "height": 2000,
-      "stage": "After"
+      "stage": "Completed"
     },
     {
       "src": "/projects/kitchenette-renovation/02-before.jpg",

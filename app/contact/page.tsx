@@ -53,7 +53,7 @@ export default function ContactPage() {
     <div>
       <PageHero
         eyebrow="Contact"
-        title="Discuss Your Industrial Project"
+        title="Discuss Your Project"
         image={meetingRoom.featured.src}
       >
         <p>

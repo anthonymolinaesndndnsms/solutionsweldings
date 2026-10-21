@@ -168,7 +168,7 @@ export default function HomePage() {
             </AnimateIn>
             <AnimateIn delay={100} className="lg:col-span-7 space-y-5">
               <p className="text-[15px] text-chrome-400 leading-relaxed">
-                A facility renovation can involve demolition, framing, flooring, ceilings, electrical
+                A facility renovation can involve framing, flooring, ceilings, electrical
                 work, plumbing, and other specialty scopes.
               </p>
               <p className="text-[15px] text-chrome-400 leading-relaxed">

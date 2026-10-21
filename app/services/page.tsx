@@ -29,7 +29,7 @@ const services: Service[] = [
     title: "Production-Area Renovations",
     body: [
       "We manage renovations to existing industrial workspaces, bringing together the construction scopes needed to modify and improve the area.",
-      "Depending on the project, work may include demolition, partitions and framing, wall finishes, doors and openings, flooring, painting, and coordination of electrical and other specialty work.",
+      "Depending on the project, work may include partitions and framing, wall finishes, doors and openings, flooring, painting, and coordination of electrical and other specialty work.",
     ],
     example: "production-area-renovation",
   },
@@ -69,7 +69,7 @@ export default function ServicesPage() {
       <PageHero
         eyebrow="Services"
         title="Industrial General Contracting Services"
-        image={project("production-area-renovation").sequence[1].src}
+        image="/projects/production-area-renovation/04-during.jpg"
       >
         <p>
           Solutions Contracting Group manages construction, renovation, and facility improvement

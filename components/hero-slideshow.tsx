@@ -12,9 +12,9 @@ import { useEffect, useState } from "react";
  * it animates is what makes the drift stutter.
  */
 const SLIDES = [
-  // Full 4:3 frame, anchored a little low so the tanks, railings and stairs
-  // all stay in view at any hero shape.
-  { src: "/hero/home-tank-farm-finished.jpg", position: "center 60%" },
+  // Bottom fifth (bare dirt) trimmed off and anchored high, so the tanks,
+  // railings and stairs fill the frame at any hero shape.
+  { src: "/hero/home-tank-farm-railings.jpg", position: "center 30%" },
   { src: "/hero/home-production-area.jpg", position: "center" },
   { src: "/hero/home-lab-ceiling.jpg", position: "center" },
 ];

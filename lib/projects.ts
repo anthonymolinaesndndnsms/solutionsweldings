@@ -37,7 +37,7 @@ const copy: { slug: keyof typeof photos; title: string; description: string }[] 
     slug: "laboratory-interior-renovation",
     title: "Laboratory Interior Renovation",
     description:
-      "Renovation of interior space adjoining an existing laboratory, with photographs showing wall demolition, a large interior observation window, and finished walls and flooring.",
+      "Renovation of interior space adjoining an existing laboratory, with photographs showing wall modifications, a large interior observation window, and finished walls and flooring.",
   },
   {
     slug: "laboratory-ceiling-lighting",

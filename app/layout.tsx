@@ -34,10 +34,6 @@ export const metadata: Metadata = {
     "North Carolina",
     "South Carolina",
   ],
-  icons: {
-    icon: "/brand/scg-icon.png",
-    apple: "/brand/scg-icon.png",
-  },
   openGraph: {
     title: "SCG Solutions Contracting Group",
     description,

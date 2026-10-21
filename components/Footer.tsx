@@ -139,16 +139,17 @@ export default function Footer() {
           </div>
           <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
             {licenses.map((lic) => (
-              <li key={lic.state} className="flex items-center gap-3">
+              // Hovering a licence gives the state outline and name a soft blue glow.
+              <li key={lic.state} className="group flex items-center gap-3 cursor-default">
                 <Image
                   src={lic.silhouette}
                   alt=""
                   width={lic.width}
                   height={lic.height}
-                  className="w-8 h-8 object-contain shrink-0"
+                  className="w-8 h-8 object-contain shrink-0 transition-[filter] duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_6px_rgba(61,158,229,0.75)]"
                 />
                 <div className="leading-tight">
-                  <div className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase">
+                  <div className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase transition-[color,text-shadow] duration-300 group-hover:text-azure-300 group-hover:[text-shadow:0_0_8px_rgba(61,158,229,0.6)]">
                     {lic.state}
                   </div>
                   <div className="text-[12px] text-chrome-300">

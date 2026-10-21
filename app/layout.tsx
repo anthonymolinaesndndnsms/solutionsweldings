@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -77,6 +78,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navigation />
         <main>{children}</main>
         <Footer />
+        {/* Vercel Web Analytics: page views only, no cookies. Collects once
+            Analytics is enabled for the project in the Vercel dashboard. */}
+        <Analytics />
       </body>
     </html>
   );

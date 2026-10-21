@@ -129,6 +129,7 @@ export default function AboutPage() {
               alt="SCG Solutions Contracting Group"
               width={1453}
               height={966}
+              sizes="(min-width: 640px) 420px, 340px"
               // The logo already carries "Plan · Manage · Deliver", so it is
               // shown large enough to read rather than repeated as text.
               className="h-auto w-full max-w-[340px] sm:max-w-[420px] mx-auto mb-10 opacity-95"

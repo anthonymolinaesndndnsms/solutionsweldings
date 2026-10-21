@@ -17,11 +17,9 @@ export function AnimateIn({ children, className = "", delay = 0 }: AnimateInProp
     const el = ref.current;
     if (!el) return;
 
-    // Respect the user's motion preference — show immediately, no transition.
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setVisible(true);
-      return;
-    }
+    // With reduced motion the .animate-in rule in globals.css already shows
+    // the content with no transition, before any script runs.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -40,7 +38,7 @@ export function AnimateIn({ children, className = "", delay = 0 }: AnimateInProp
   return (
     <div
       ref={ref}
-      className={className}
+      className={`animate-in ${className}`}
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(12px)",

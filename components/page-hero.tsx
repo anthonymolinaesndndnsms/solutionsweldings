@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface PageHeroProps {
   /** Small uppercase label above the title. */
@@ -18,10 +19,17 @@ interface PageHeroProps {
 export function PageHero({ eyebrow, title, image, children }: PageHeroProps) {
   return (
     <section className="relative bg-steel-900 pt-[100px] overflow-hidden border-b border-steel-700">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${image}')` }}
+      {/* Same "cover, centred" framing as the CSS background this replaces,
+          but served at screen size in WebP/AVIF instead of the 2000px JPEG. */}
+      <Image
+        src={image}
+        alt=""
         aria-hidden
+        fill
+        sizes="100vw"
+        quality={80}
+        loading="eager"
+        className="object-cover object-center"
       />
       <div
         className="absolute inset-0"

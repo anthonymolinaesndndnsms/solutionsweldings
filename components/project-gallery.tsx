@@ -68,11 +68,11 @@ export function ProjectGallery({ project }: { project: Project }) {
 
       {project.sequence.length > 0 && (
         <div className="mt-6">
-          <h4 className="text-[10.5px] font-bold tracking-[0.2em] text-ink-400 uppercase mb-3">
+          <h3 className="text-[10.5px] font-bold tracking-[0.2em] text-ink-400 uppercase mb-3">
             {project.sequence.some((p) => /before|during/i.test(p.stage))
               ? "Construction sequence"
               : "More photos"}
-          </h4>
+          </h3>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
             {project.sequence.map((photo, i) => (
               <li key={photo.src}>

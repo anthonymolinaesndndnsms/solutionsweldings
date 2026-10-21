@@ -95,6 +95,12 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .rise-in { animation: none; }
+  /* AnimateIn sets its fade-up inline; show the content outright instead. */
+  .animate-in {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* Slow continuous drift behind the home hero. Every frame shares one

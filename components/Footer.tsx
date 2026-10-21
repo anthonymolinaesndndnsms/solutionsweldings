@@ -41,8 +41,8 @@ export default function Footer() {
             <Image
               src="/brand/scg-lockup-nav.png"
               alt="SCG Solutions Contracting Group"
-              width={391}
-              height={260}
+              width={126}
+              height={84}
               className="h-[84px] w-auto mb-5"
             />
             <p className="text-[13px] text-chrome-500 leading-relaxed max-w-xs mb-4">
@@ -55,9 +55,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
+            <h3 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
               What We Do
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {serviceLinks.map(([label, href]) => (
                 <li key={label}>
@@ -73,9 +73,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
+            <h3 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
               Site
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {siteLinks.map(([label, href]) => (
                 <li key={label}>
@@ -92,9 +92,9 @@ export default function Footer() {
 
           {showContact && (
           <div>
-            <h4 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
+            <h3 className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase mb-5">
               Contact
-            </h4>
+            </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-azure-400 mt-0.5 shrink-0" />

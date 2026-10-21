@@ -217,7 +217,7 @@ export default function HomePage() {
                       src={card.photo.src}
                       alt={`${card.title}, completed`}
                       fill
-                      sizes="(min-width: 768px) 33vw, 100vw"
+                      sizes="(min-width: 1280px) 400px, (min-width: 768px) 33vw, calc(100vw - 48px)"
                       className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>

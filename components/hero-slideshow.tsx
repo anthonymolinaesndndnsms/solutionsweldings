@@ -68,7 +68,7 @@ export function HeroSlideshow() {
             alt=""
             fill
             sizes="100vw"
-            quality={80}
+            quality={100}
             loading="eager"
             // Decode ahead of time: left alone, the browser decodes a frame
             // the moment it is first painted, which is exactly when it

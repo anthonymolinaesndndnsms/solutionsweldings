@@ -2,10 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Serve AVIF where supported, WebP otherwise. 80 matches the quality the
-    // hero and project JPEGs were exported at, so photos look the same.
+    // Serve AVIF where supported, WebP otherwise, always at full quality.
+    // 100 is the only allowed value, so every image (including ones with no
+    // quality prop, which default to 75) is encoded at 100.
     formats: ["image/avif", "image/webp"],
-    qualities: [75, 80],
+    qualities: [100],
   },
   // The site's CSS is small (Tailwind), so inlining it removes the one
   // render-blocking stylesheet request before first paint.

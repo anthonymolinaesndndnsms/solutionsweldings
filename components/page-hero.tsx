@@ -27,7 +27,7 @@ export function PageHero({ eyebrow, title, image, children }: PageHeroProps) {
         aria-hidden
         fill
         sizes="100vw"
-        quality={80}
+        quality={100}
         loading="eager"
         className="object-cover object-center"
       />

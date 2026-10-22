@@ -136,6 +136,10 @@ export default function Footer() {
         <div className="border-t border-steel-700 pt-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
           <div className="text-[12px] text-chrome-500">
             © {new Date().getFullYear()} Solutions Contracting Group. All rights reserved.
+            <span className="mx-2 text-steel-600" aria-hidden>·</span>
+            <Link href="/privacy" className="hover:text-chrome-200 transition-colors duration-150">
+              Privacy Policy
+            </Link>
           </div>
           <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
             {licenses.map((lic) => (

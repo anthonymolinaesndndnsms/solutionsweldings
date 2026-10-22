@@ -3,4 +3,4 @@
 export const SITE_URL = "https://www.solutionscontractinggroup.com";
 
 // Public, indexable pages. Keep in step with app/**/page.tsx.
-export const PUBLIC_ROUTES = ["/", "/services", "/portfolio", "/about", "/contact"] as const;
+export const PUBLIC_ROUTES = ["/", "/services", "/portfolio", "/about", "/contact", "/privacy"] as const;

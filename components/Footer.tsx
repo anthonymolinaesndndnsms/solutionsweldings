@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, UserRound } from "lucide-react";
 
 // Same state outlines and licence wording as the Contact page.
 const licenses = [
@@ -97,6 +97,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
+                <UserRound className="w-4 h-4 text-azure-400 mt-0.5 shrink-0" />
+                <div>
+                  <div className="text-[13px] text-chrome-200 font-medium">Shawn Spigner</div>
+                  <div className="text-[11px] text-chrome-500">Owner</div>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-azure-400 mt-0.5 shrink-0" />
                 <div>
                   <a
@@ -128,6 +135,28 @@ export default function Footer() {
                   </div>
                 </div>
               </li>
+              {licenses.map((lic) => (
+                // Same layout as the Contact page: the state outline stands in
+                // for the icon. Hovering gives the outline and name a soft blue glow.
+                <li key={lic.state} className="group flex items-start gap-3 cursor-default">
+                  <span className="w-4 shrink-0 flex justify-center mt-0.5">
+                    <Image
+                      src={lic.silhouette}
+                      alt=""
+                      width={lic.width}
+                      height={lic.height}
+                      className="w-6 h-6 max-w-none object-contain transition-[filter] duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_6px_rgba(61,158,229,0.75)]"
+                    />
+                  </span>
+                  <div className="leading-tight">
+                    <div className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase transition-[color,text-shadow] duration-300 group-hover:text-azure-300 group-hover:[text-shadow:0_0_8px_rgba(61,158,229,0.6)]">
+                      {lic.state}
+                    </div>
+                    <div className="text-[13px] text-chrome-200 font-medium mt-0.5">General Contractor</div>
+                    <div className="text-[11px] text-chrome-500">{lic.number}</div>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
           )}
@@ -141,28 +170,6 @@ export default function Footer() {
               Privacy Policy
             </Link>
           </div>
-          <ul className="flex flex-wrap items-center gap-x-8 gap-y-4">
-            {licenses.map((lic) => (
-              // Hovering a licence gives the state outline and name a soft blue glow.
-              <li key={lic.state} className="group flex items-center gap-3 cursor-default">
-                <Image
-                  src={lic.silhouette}
-                  alt=""
-                  width={lic.width}
-                  height={lic.height}
-                  className="w-8 h-8 object-contain shrink-0 transition-[filter] duration-300 group-hover:brightness-125 group-hover:drop-shadow-[0_0_6px_rgba(61,158,229,0.75)]"
-                />
-                <div className="leading-tight">
-                  <div className="text-[10px] font-bold tracking-[0.18em] text-chrome-400 uppercase transition-[color,text-shadow] duration-300 group-hover:text-azure-300 group-hover:[text-shadow:0_0_8px_rgba(61,158,229,0.6)]">
-                    {lic.state}
-                  </div>
-                  <div className="text-[12px] text-chrome-300">
-                    General Contractor <span className="text-chrome-500">{lic.number}</span>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </footer>

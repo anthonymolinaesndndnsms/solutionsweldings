@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, UserRound } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
 import { PageHero } from "@/components/page-hero";
 import { ContactForm } from "@/components/contact-form";
@@ -27,6 +27,7 @@ type Row = {
 // is now one row per state: state first, then the licence wording from the
 // business card.
 const rows: Row[] = [
+  { icon: UserRound, label: "Owner", value: "Shawn Spigner", sub: "", href: null },
   { icon: Phone, label: "Phone", value: "(980) 339-0527", sub: "Mon–Fri, 7am–6pm", href: "tel:9803390527" },
   { icon: Mail, label: "Email", value: "shawn@solutionscontractinggroup.com", sub: "", href: "mailto:shawn@solutionscontractinggroup.com" },
   { icon: MapPin, label: "Based In", value: "Fort Mill, SC", sub: "Serving North & South Carolina", href: null },

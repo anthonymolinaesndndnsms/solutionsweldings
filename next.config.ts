@@ -26,6 +26,16 @@ const nextConfig: NextConfig = {
         destination: "https://www.solutionscontractinggroup.com/:path*",
         permanent: true,
       },
+      // Vercel also serves production at the project's own address, a full
+      // public copy of every page. Redirect it so www is the only address
+      // that answers with a page, the clearest canonical signal Google has.
+      // Preview deployments use other hostnames and are unaffected.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "solutionsweldings\\.vercel\\.app" }],
+        destination: "https://www.solutionscontractinggroup.com/:path*",
+        permanent: true,
+      },
     ];
   },
 };
